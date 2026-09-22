@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.className+=" js"</script>
+<title>Crea tu primera aplicación web con IA | Comunidad Equilibria</title>
+<meta name="description" content="Comunidad gratuita: cada viernes a las 7:00 pm construimos en vivo tu primera aplicación web y tu primera página web con inteligencia artificial, desde cero hasta publicarlas. Sin programar y sin costo.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tu primera aplicación web con IA · Comunidad Equilibria">
+<meta property="og:description" content="Cada viernes a las 7:00 pm. De la idea a la app publicada, sin programar y sin gastar un sol. Gratis.">
+<meta property="og:image" content="https://ia-equilibria.vercel.app/assets/og-crea-con-ia.jpg">
+<meta property="og:url" content="https://ia-equilibria.vercel.app/crea-con-ia">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/eq.css">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1441853580744350');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1441853580744350&ev=PageView&noscript=1"></noscript>
+<!-- /Meta Pixel -->
+
+<style>
+  :root{--accent:#0061F3;--accent-2:#9304FF;--accent-soft:rgba(0,97,243,.18)}
+  .browser .core{padding:.55rem}
+  .chrome{display:flex;align-items:center;gap:.4rem;padding:.4rem .5rem .65rem}
+  .chrome span{width:.55rem;height:.55rem;border-radius:50%;background:var(--soft-2);flex:none}
+  .chrome em{margin-left:.5rem;font-style:normal;font-size:.7rem;color:var(--ink-3);background:var(--soft);padding:.28rem .6rem;border-radius:99px;flex:1;text-align:center;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .screen{background:var(--soft);border-radius:1.15rem;padding:1.1rem}
+  .screen .hd{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+  .screen .hd b{font-family:"Outfit",sans-serif;font-size:1rem}
+  .screen .hd span{font-size:.64rem;font-weight:700;color:var(--wa);background:rgba(31,168,90,.1);padding:.22rem .5rem;border-radius:99px;white-space:nowrap}
+  .rows{margin-top:.85rem;display:grid;gap:.4rem}
+  .rows div{display:flex;justify-content:space-between;align-items:center;gap:.5rem;background:#fff;border-radius:.75rem;padding:.55rem .75rem;font-size:.83rem;color:var(--ink-2)}
+  .rows i{font-style:normal;font-weight:700;color:var(--ink);font-family:"Outfit",sans-serif}
+  .mockbtn{margin-top:.8rem;text-align:center;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;font-weight:700;font-size:.85rem;padding:.7rem;border-radius:.85rem}
+  .foot{display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem;gap:.45rem;padding:.8rem .5rem .3rem;font-size:.73rem;color:var(--ink-3);font-weight:600;flex-wrap:wrap}
+  .foot b{font-family:"Outfit",sans-serif;color:var(--ink);font-size:.85rem}
+</style>
+</head>
+<body data-landing="crea-con-ia">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gradStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03D6CE"/><stop offset=".5" stop-color="#0061F3"/><stop offset="1" stop-color="#9304FF"/>
+    </linearGradient>
+    <symbol id="wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></symbol>
+    <symbol id="ok" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Principal">
+  <a href="#" aria-label="Equilibria"><img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting"></a>
+  <a class="btn grad" href="gracias" data-cta="nav"><span class="t">Unirme al grupo</span><span class="ic"><svg><use href="#wa"/></svg></span></a>
+</nav>
+
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="orbs"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow live rv"><span class="dot"></span>Comunidad gratuita · Viernes 7:00 pm</span>
+      <h1 class="rv d1">Tienes una idea. Sal de la comunidad con tu <span class="acc-text">aplicación web publicada</span>.</h1>
+      <p class="sub rv d2">Cada viernes a las 7:00 pm construimos en vivo con inteligencia artificial: tu primera aplicación y tu primera página web, desde cero hasta publicarlas en internet. <b>Sin programar y sin gastar un sol.</b></p>
+      <div class="actions rv d3">
+        <a class="btn grad big" href="gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+        <p class="cta-note">
+          <span><svg viewBox="0 0 24 24"><use href="#ok"/></svg>100% gratis</span>
+          <span><svg viewBox="0 0 24 24"><use href="#ok"/></svg>Viernes · 7:00 pm (hora Perú)</span>
+          <span><svg viewBox="0 0 24 24"><use href="#ok"/></svg>Sin spam</span>
+        </p>
+      </div>
+      <div class="trust rv d4">
+        <div class="stack" aria-hidden="true"><span style="background:linear-gradient(135deg,#03D6CE,#00AFD3)">IA</span><span style="background:linear-gradient(135deg,#00AFD3,#0061F3)">EIA</span><span style="background:linear-gradient(135deg,#0061F3,#9304FF)">SIG</span><span style="background:#1A1F35">+</span></div>
+        <span>Ingenieros, consultores, emprendedores y estudiantes que quieren construir sus propias herramientas.</span>
+      </div>
+    </div>
+    <div class="visual rv d2">
+      <img src="../assets/ring.webp" class="ring" alt="">
+      <div class="shell float browser">
+        <div class="core">
+          <div class="chrome"><span></span><span></span><span></span><em>mi-primera-app.vercel.app</em></div>
+          <div class="screen">
+            <div class="hd"><b>Control de residuos</b><span>Publicada</span></div>
+            <div class="rows">
+              <div><span>Residuos generados</span><i>1 240 kg</i></div>
+              <div><span>Reaprovechados</span><i>63 %</i></div>
+              <div><span>Dispuestos</span><i>458 kg</i></div>
+            </div>
+            <div class="mockbtn">Generar reporte</div>
+          </div>
+          <div class="foot"><span>Próxima sesión</span><b data-fecha>Este viernes</b><span>· 7:00 pm</span></div>
+        </div>
+      </div>
+      <div class="shell chip-float">
+        <div class="core">
+          <div class="av">✓</div>
+          <div><b>Con su propio enlace</b>
+          <p>Terminas la sesión con una dirección real que puedes abrir y compartir.</p>
+          <div class="tools"><span>Sin código</span><span>Sin costo</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tools-strip">
+  <p class="rv">Construimos con las IAs que hoy escriben el mejor código</p>
+  <div class="marquee rv d1">
+    <div class="track">
+      <span class="tool"><i style="background:#D97757">C</i>Claude</span>
+      <span class="tool"><i style="background:#10A37F">G</i>ChatGPT</span>
+      <span class="tool"><i style="background:linear-gradient(135deg,#10A37F,#0061F3)">✦</i>GPT-6 Astra</span>
+      <span class="tool"><i style="background:linear-gradient(135deg,#4E8DF5,#9168C0)">✦</i>Gemini</span>
+      <span class="tool"><i style="background:linear-gradient(135deg,#0078D4,#8A3FFC)">◐</i>Copilot</span>
+      <span class="tool"><i style="background:#1A73E8">N</i>NotebookLM</span>
+      <span class="tool" aria-hidden="true"><i style="background:#D97757">C</i>Claude</span>
+      <span class="tool" aria-hidden="true"><i style="background:#10A37F">G</i>ChatGPT</span>
+      <span class="tool" aria-hidden="true"><i style="background:linear-gradient(135deg,#10A37F,#0061F3)">✦</i>GPT-6 Astra</span>
+      <span class="tool" aria-hidden="true"><i style="background:linear-gradient(135deg,#4E8DF5,#9168C0)">✦</i>Gemini</span>
+      <span class="tool" aria-hidden="true"><i style="background:linear-gradient(135deg,#0078D4,#8A3FFC)">◐</i>Copilot</span>
+      <span class="tool" aria-hidden="true"><i style="background:#1A73E8">N</i>NotebookLM</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section id="por-que">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="dot"></span>Por qué ahora</span>
+      <h2>Ya no necesitas un programador para convertir tu idea en algo real.</h2>
+      <p>Hoy le describes tu idea en español a una inteligencia artificial y ella escribe el código. Lo que antes costaba miles de soles y meses de espera, hoy sale en una sesión de dos horas. La barrera dejó de ser técnica: es saber pedirlo bien, y eso se aprende.</p>
+    </div>
+    <div class="cards">
+      <div class="shell rv dark"><div class="core">
+        <span class="tag">Habilidad esencial</span>
+        <h3>Un profesional que construye sus propias herramientas vale distinto.</h3>
+        <p>No es lo mismo decir que sabes usar IA que mostrar una aplicación funcionando con tu nombre encima. Es la diferencia entre contarlo y demostrarlo en una entrevista, una propuesta o una reunión.</p>
+      </div></div>
+      <div class="shell rv d1"><div class="core">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 9 5 12l3 3M16 9l3 3-3 3M13 6l-2 12"/></svg></div>
+        <h3>Sin escribir una línea de código</h3>
+        <p>Tú describes en español lo que quieres y la IA lo programa. Lo que enseñamos es cómo describirlo para que salga bien desde el primer intento.</p>
+      </div></div>
+      <div class="shell rv d2"><div class="core">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 .9-5 3 2.2 2.7 5 3.5 5 1.4 5 3.5-2.2 3-5 3-5-1-5-3"/></svg></div>
+        <h3>Sin gastar un solo sol</h3>
+        <p>Las IAs, el alojamiento y la publicación en internet, todo en versión gratuita. Terminas con un enlace activo y sin haber puesto una tarjeta.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="como">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow"><span class="dot"></span>Cómo es cada viernes</span>
+      <h2>De la idea al enlace publicado, en tres pasos.</h2>
+      <p>Una sesión en vivo cada viernes a las 7:00 pm. Entras con una idea y sales con algo que funciona y que puedes mostrar.</p>
+    </div>
+    <div class="steps">
+      <div class="shell rv"><div class="core">
+        <div class="n">01</div>
+        <h3>Convertimos tu idea en un plan</h3>
+        <p>Qué resuelve, para quién y cómo se ve. Con Claude y ChatGPT armamos el mapa completo de tu aplicación antes de construir nada.</p>
+        <span class="k">Diseño</span>
+      </div></div>
+      <div class="shell rv d1"><div class="core">
+        <div class="n">02</div>
+        <h3>La construimos contigo en vivo</h3>
+        <p>Escribes lo que quieres, la IA genera el código y tú lo ves funcionando en pantalla esa misma noche, paso a paso y sin saltarte nada.</p>
+        <span class="k">Construcción</span>
+      </div></div>
+      <div class="shell rv d2"><div class="core">
+        <div class="n">03</div>
+        <h3>La publicamos en internet</h3>
+        <p>Le damos su propia dirección, la subimos gratis y queda lista para enseñarla a tu jefe, tu cliente o tu equipo.</p>
+        <span class="k">Publicación</span>
+      </div></div>
+    </div>
+    <div class="sec-head center rv" style="margin-top:4rem">
+      <span class="eyebrow"><span class="dot"></span>Lo que puedes construir</span>
+    </div>
+    <div class="topics rv d1">
+      <span>Calculadoras técnicas</span>
+      <span>Fichas y formularios de campo</span>
+      <span>Tableros de monitoreo</span>
+      <span>Tu página web profesional</span>
+      <span>Catálogos y portafolios</span>
+      <span>Registros y bases de datos</span>
+      <span>Cotizadores y simuladores</span>
+      <span>Asistentes para tu equipo</span>
+    </div>
+  </div>
+</section>
+
+<section id="para-quien">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="dot"></span>Para quién es</span>
+      <h2>Si alguna vez pensaste «esto debería existir», esto es para ti.</h2>
+    </div>
+    <div class="checks">
+      <div class="shell rv"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Profesionales con una idea guardada</b><p>Esa herramienta que siempre quisiste que existiera en tu trabajo y nunca supiste a quién pedírsela.</p></div>
+      </div></div>
+      <div class="shell rv d1"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Consultores e independientes</b><p>Que necesitan una página web propia y presentarse con algo mejor que un PDF adjunto.</p></div>
+      </div></div>
+      <div class="shell rv d2"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Equipos y empresas</b><p>Que quieren resolver por dentro lo que hoy tercerizan y esperan semanas a que les entreguen.</p></div>
+      </div></div>
+      <div class="shell rv d3"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Estudiantes y tesistas</b><p>Que quieren salir al mercado con un proyecto propio, publicado y demostrable.</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="alt" id="quien">
+  <div class="wrap mentor-grid mentor">
+    <div class="photo rv">
+      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" loading="lazy">
+      <div class="badge"><img src="../assets/logo-equilibria.webp" alt="">CEO de Equilibria</div>
+    </div>
+    <div class="rv d1">
+      <span class="eyebrow"><span class="dot"></span>Quién guía la comunidad</span>
+      <h2>Jilder Michael Castillo Cabrera</h2>
+      <div class="role">Ingeniero ambiental · Fundador de la Comunidad de IA aplicada al Medio Ambiente</div>
+      <p class="bio">Formación práctica en gestión, supervisión y fiscalización ambiental, y creador de herramientas con inteligencia artificial para el sector. Lleva la IA al trabajo real del profesional: documentos, datos, decisiones y proyectos propios.</p>
+      <ul>
+        <li>Experiencia en supervisión y fiscalización ambiental en el Perú.</li>
+        <li>Desarrolla apps, flujos y asistentes con IA para equipos ambientales.</li>
+        <li>Enseña con casos reales, en lenguaje claro y aplicable desde el primer día.</li>
+      </ul>
+      <blockquote>«La IA no reemplaza al profesional. Reemplaza al profesional que sigue esperando a que alguien le construya sus ideas.»<span>Equilibria · Comunidad de IA</span></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow"><span class="dot"></span>Preguntas frecuentes</span>
+      <h2>Lo que necesitas saber antes de entrar</h2>
+    </div>
+    <div class="faq rv d1">
+      <details open>
+        <summary>¿Necesito saber programar?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">No. Ese es justamente el punto. Tú describes en español lo que quieres y la inteligencia artificial escribe el código. Si sabes usar un navegador y explicar una idea, puedes construir con nosotros.</div>
+      </details>
+      <details>
+        <summary>¿Tengo que pagar algo?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">No. La comunidad es gratuita y trabajamos con los planes gratuitos de las IAs y del servicio donde se publica la aplicación. No necesitas tarjeta para terminar con tu app en internet.</div>
+      </details>
+      <details>
+        <summary>¿Qué tipo de aplicación puedo hacer?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Calculadoras técnicas, fichas de campo, tableros de monitoreo, registros, catálogos, cotizadores, tu página web profesional o un asistente para tu equipo. Si lo puedes explicar, se puede construir.</div>
+      </details>
+      <details>
+        <summary>¿Y si todavía no tengo una idea?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Entras igual. En cada sesión trabajamos sobre un caso real y te damos ideas que puedes adoptar tal cual y adaptar a tu trabajo.</div>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo toma tener algo funcionando?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Una sesión para la primera versión. Lo que sigue después es mejorarla, y eso lo resolvemos en el grupo durante la semana.</div>
+      </details>
+      <details>
+        <summary>¿Cuándo y dónde son las sesiones?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Todos los viernes a las 7:00 pm (hora Perú), en vivo por videollamada. El enlace de cada sesión se comparte solo en el grupo de WhatsApp.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="shell rv">
+      <div class="core">
+        <img src="../assets/ring.webp" class="ring2" alt="" loading="lazy">
+        <span class="eyebrow live"><span class="dot"></span><span>Próxima sesión: <span data-fecha="min">este viernes</span> · 7:00 pm</span></span>
+        <h2>Tu idea lleva demasiado tiempo esperando.</h2>
+        <p>Entra al grupo hoy. Este viernes empezamos a construir, y sales de la sesión con algo que existe y que puedes abrir en tu teléfono.</p>
+        <div class="actions">
+          <a class="btn grad big" href="gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+          <p class="cta-note" style="justify-content:center"><span>Gratis</span><span>·</span><span>Sin spam</span><span>·</span><span>Sales cuando quieras</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting">
+    <p>Equilibria Consulting · Comunidad de IA aplicada al Medio Ambiente · <span id="year"></span></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn grad" href="gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+</div>
+
+<script src="../assets/eq.js"></script>
+</body>
+</html>

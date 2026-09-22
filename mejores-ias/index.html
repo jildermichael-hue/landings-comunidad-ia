@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.className+=" js"</script>
+<title>Las mejores IAs y cuál usar para cada tarea | Comunidad Equilibria</title>
+<meta name="description" content="Comunidad gratuita: cada viernes a las 7:00 pm probamos en vivo Claude, ChatGPT, Gemini, NotebookLM, Copilot, Perplexity y DeepSeek sobre trabajo real, y aprendemos cuál usar para cada tarea y cómo combinarlas.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="No existe la mejor IA, existe la correcta para cada tarea · Equilibria">
+<meta property="og:description" content="Claude, ChatGPT, Gemini, NotebookLM, Copilot y más, comparadas en vivo cada viernes. Gratis.">
+<meta property="og:image" content="https://ia-equilibria.vercel.app/assets/og-mejores-ias.jpg">
+<meta property="og:url" content="https://ia-equilibria.vercel.app/mejores-ias">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/eq.css">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1441853580744350');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1441853580744350&ev=PageView&noscript=1"></noscript>
+<!-- /Meta Pixel -->
+
+<style>
+  :root{--accent:#03D6CE;--accent-2:#9304FF;--accent-soft:rgba(147,4,255,.16)}
+  .match .core{padding:1.3rem}
+  .mhd b{display:block;font-family:"Outfit",sans-serif;font-size:1.06rem;font-weight:700}
+  .mhd span{font-size:.74rem;color:var(--ink-3);font-weight:600}
+  .mrows{margin-top:1rem;display:grid;gap:.42rem}
+  .mrows div{display:flex;justify-content:space-between;align-items:center;gap:.6rem;background:var(--soft);border-radius:.8rem;padding:.58rem .7rem}
+  .task{font-size:.84rem;color:var(--ink-2)}
+  .ai{font-size:.72rem;font-weight:800;color:#fff;background:var(--c);padding:.26rem .6rem;border-radius:99px;white-space:nowrap;font-family:"Outfit",sans-serif;flex:none}
+  .foot{display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem;gap:.45rem;padding:.95rem .5rem .1rem;font-size:.73rem;color:var(--ink-3);font-weight:600;flex-wrap:wrap}
+  .foot b{font-family:"Outfit",sans-serif;color:var(--ink);font-size:.85rem}
+  .pick .core{padding:1.5rem}
+  .pick .nm{display:flex;align-items:center;gap:.6rem;font-family:"Outfit",sans-serif;font-weight:700;font-size:1.1rem}
+  .pick .nm i{width:1.9rem;height:1.9rem;border-radius:.6rem;display:grid;place-items:center;font-style:normal;font-size:.8rem;font-weight:800;color:#fff;flex:none}
+  .pick .for{display:block;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:1rem}
+  .pick p{margin-top:.35rem;color:var(--ink-2);font-size:.94rem}
+</style>
+</head>
+<body data-landing="mejores-ias">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gradStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03D6CE"/><stop offset=".5" stop-color="#0061F3"/><stop offset="1" stop-color="#9304FF"/>
+    </linearGradient>
+    <symbol id="wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></symbol>
+    <symbol id="ok" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Principal">
+  <a href="#" aria-label="Equilibria"><img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting"></a>
+  <a class="btn grad" href="gracias" data-cta="nav"><span class="t">Unirme al grupo</span><span class="ic"><svg><use href="#wa"/></svg></span></a>
+</nav>
+
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="orbs"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow live rv"><span class="dot"></span>Comunidad gratuita · Viernes 7:00 pm</span>
+      <h1 class="rv d1">No existe la mejor IA. Existe <span class="acc-text">la correcta para cada tarea</span>.</h1>
+      <p class="sub rv d2">Cada viernes a las 7:00 pm probamos en vivo Claude, ChatGPT, Gemini, NotebookLM, Copilot, Perplexity y DeepSeek sobre trabajo real, y aprendemos cuál usar para qué, cuándo y cómo combinarlas. <b>Gratis, y casi todo en versión gratuita.</b></p>
+      <div class="actions rv d3">
+        <a class="btn grad big" href="gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+        <p class="cta-note">
+          <span><svg viewBox="0 0 24 24"><use href="#ok"/></svg>100% gratis</span>
+          <span><svg viewBox="0 0 24 24"><use href="#ok"/></svg>Viernes · 7:00 pm (hora Perú)</span>
+          <span><svg viewBox="0 0 24 24"><use href="#ok"/></svg>Sin spam</span>
+        </p>
+      </div>
+      <div class="trust rv d4">
+        <div class="stack" aria-hidden="true"><span style="background:linear-gradient(135deg,#03D6CE,#00AFD3)">IA</span><span style="background:linear-gradient(135deg,#00AFD3,#0061F3)">EIA</span><span style="background:linear-gradient(135deg,#0061F3,#9304FF)">SIG</span><span style="background:#1A1F35">+</span></div>
+        <span>Profesionales de todo el Perú y Latinoamérica que quieren dejar de improvisar con la IA.</span>
+      </div>
+    </div>
+    <div class="visual rv d2">
+      <img src="../assets/ring.webp" class="ring" alt="">
+      <div class="shell float match">
+        <div class="core">
+          <div class="mhd"><b>¿Cuál uso para esto?</b><span>Comparativa en vivo, cada viernes</span></div>
+          <div class="mrows">
+            <div><span class="task">Redactar un informe largo</span><span class="ai" style="--c:#D97757">Claude</span></div>
+            <div><span class="task">Estudiar una norma</span><span class="ai" style="--c:#1A73E8">NotebookLM</span></div>
+            <div><span class="task">Crear imágenes y videos</span><span class="ai" style="--c:#10A37F">ChatGPT</span></div>
+            <div><span class="task">Buscar con fuentes</span><span class="ai" style="--c:#20808D">Perplexity</span></div>
+            <div><span class="task">Word, Excel y PowerPoint</span><span class="ai" style="--c:#0078D4">Copilot</span></div>
+          </div>
+          <div class="foot"><span>Próxima sesión</span><b data-fecha>Este viernes</b><span>· 7:00 pm</span></div>
+        </div>
+      </div>
+      <div class="shell chip-float">
+        <div class="core">
+          <div class="av">VS</div>
+          <div><b>La misma tarea, tres IAs</b>
+          <p>Lado a lado y en vivo. Ves cuál gana, por qué, y te quedas con la mejor.</p>
+          <div class="tools"><span>Gratis</span><span>Sin instalar nada</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tools-strip">
+  <p class="rv">Las comparamos todas, con la misma tarea y en vivo</p>
+  <div class="marquee rv d1">
+    <div class="track">
+      <span class="tool"><i style="background:#D97757">C</i>Claude</span>
+      <span class="tool"><i style="background:#10A37F">G</i>ChatGPT</span>
+      <span class="tool"><i style="background:linear-gradient(135deg,#4E8DF5,#9168C0)">✦</i>Gemini</span>
+      <span class="tool"><i style="background:#1A73E8">N</i>NotebookLM</span>
+      <span class="tool"><i style="background:linear-gradient(135deg,#0078D4,#8A3FFC)">◐</i>Copilot</span>
+      <span class="tool"><i style="background:#20808D">P</i>Perplexity</span>
+      <span class="tool"><i style="background:#4D6BFE">D</i>DeepSeek</span>
+      <span class="tool" aria-hidden="true"><i style="background:#D97757">C</i>Claude</span>
+      <span class="tool" aria-hidden="true"><i style="background:#10A37F">G</i>ChatGPT</span>
+      <span class="tool" aria-hidden="true"><i style="background:linear-gradient(135deg,#4E8DF5,#9168C0)">✦</i>Gemini</span>
+      <span class="tool" aria-hidden="true"><i style="background:#1A73E8">N</i>NotebookLM</span>
+      <span class="tool" aria-hidden="true"><i style="background:linear-gradient(135deg,#0078D4,#8A3FFC)">◐</i>Copilot</span>
+      <span class="tool" aria-hidden="true"><i style="background:#20808D">P</i>Perplexity</span>
+      <span class="tool" aria-hidden="true"><i style="background:#4D6BFE">D</i>DeepSeek</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section id="cual">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="dot"></span>Lo que aprendes a distinguir</span>
+      <h2>Cada IA es excelente en algo distinto. Esa es toda la ventaja.</h2>
+      <p>La mayoría abre una sola herramienta y le pide todo. Por eso obtiene resultados mediocres en casi todo. En la comunidad aprendes qué hace mejor cada una y cómo encadenarlas para que el resultado final sea de otro nivel.</p>
+    </div>
+    <div class="cards">
+      <div class="shell pick rv"><div class="core">
+        <div class="nm"><i style="background:#D97757">C</i>Claude</div>
+        <span class="for">Para documentos técnicos</span>
+        <p>Redacta y revisa textos largos sin perder el hilo ni el tono formal. Es la que mejor sostiene un informe completo de principio a fin.</p>
+      </div></div>
+      <div class="shell pick rv d1"><div class="core">
+        <div class="nm"><i style="background:#10A37F">G</i>ChatGPT</div>
+        <span class="for">Para el día a día</span>
+        <p>Resuelve, calcula, crea imágenes y automatiza. La más completa y la mejor primera IA si vas a empezar por una sola.</p>
+      </div></div>
+      <div class="shell pick rv d2"><div class="core">
+        <div class="nm"><i style="background:linear-gradient(135deg,#4E8DF5,#9168C0)">✦</i>Gemini</div>
+        <span class="for">Para tus archivos y Google</span>
+        <p>Trabaja directamente sobre lo que ya vive en tu Drive, tus correos y tus documentos, sin que tengas que copiar y pegar nada.</p>
+      </div></div>
+      <div class="shell pick rv d3"><div class="core">
+        <div class="nm"><i style="background:#1A73E8">N</i>NotebookLM</div>
+        <span class="for">Para estudiar y no inventar</span>
+        <p>Responde únicamente con las fuentes que tú le cargas. Normas, expedientes y manuales, con la cita y la página exacta.</p>
+      </div></div>
+      <div class="shell pick rv d3"><div class="core">
+        <div class="nm"><i style="background:linear-gradient(135deg,#0078D4,#8A3FFC)">◐</i>Copilot</div>
+        <span class="for">Para Office</span>
+        <p>Vive dentro de Word, Excel y PowerPoint. Si tu trabajo se entrega en esos formatos, es la que menos te cambia la rutina.</p>
+      </div></div>
+      <div class="shell pick rv d3"><div class="core">
+        <div class="nm"><i style="background:#20808D">P</i>Perplexity</div>
+        <span class="for">Para buscar en serio</span>
+        <p>Devuelve respuestas con fuentes verificables. Cuando necesitas citar y no adivinar, es la que corresponde.</p>
+      </div></div>
+      <div class="shell pick rv d3"><div class="core">
+        <div class="nm"><i style="background:#4D6BFE">D</i>DeepSeek</div>
+        <span class="for">La alternativa gratuita</span>
+        <p>Potente y sin costo. La opción cuando el plan de pago simplemente no está sobre la mesa este mes.</p>
+      </div></div>
+      <div class="shell pick rv d3"><div class="core">
+        <div class="nm"><i style="background:linear-gradient(135deg,#03D6CE,#9304FF)">✦</i>Y la combinación</div>
+        <span class="for">El nivel siguiente</span>
+        <p>Una investiga, otra redacta y una tercera revisa. Dos o tres IAs gratuitas bien encadenadas superan a una de pago mal usada.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="pagar">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow"><span class="dot"></span>La pregunta de siempre</span>
+      <h2>¿Estoy obligado a pagar una IA?</h2>
+      <p>No. Y te lo demostramos en vivo, con el trabajo real de cada viernes.</p>
+    </div>
+    <div class="cards">
+      <div class="shell rv"><div class="core">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 .9-5 3 2.2 2.7 5 3.5 5 1.4 5 3.5-2.2 3-5 3-5-1-5-3"/></svg></div>
+        <h3>Hasta dónde llega el plan gratuito</h3>
+        <p>Mucho más lejos de lo que crees. La mayor parte del trabajo profesional se resuelve sin pagar un solo sol, y te mostramos exactamente dónde está el límite real.</p>
+      </div></div>
+      <div class="shell rv d1"><div class="core">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Cuándo sí conviene pagar</h3>
+        <p>Hay tres momentos concretos en los que el plan de pago se paga solo. Te decimos cuáles son, cuál elegir y en qué orden, sin que te vendamos nada.</p>
+      </div></div>
+      <div class="shell rv d2"><div class="core">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3v12M18 9v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M9 18h6a3 3 0 0 0 3-3"/></svg></div>
+        <h3>Cómo combinarlas sin pagar</h3>
+        <p>El truco no es tener la mejor IA: es repartir la tarea entre varias gratuitas. Esa es la parte que casi nadie enseña y la que más cambia tus resultados.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contenido">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow"><span class="dot"></span>Además</span>
+      <h2>Creamos contenido que se ve profesional, sin diseñador.</h2>
+      <p>Imágenes, videos y presentaciones de alto impacto para tus informes, tus clases y tus propuestas. Todo con versiones gratuitas.</p>
+    </div>
+    <div class="topics rv d1">
+      <span>Imágenes con IA</span>
+      <span>Videos cortos</span>
+      <span>Presentaciones de alto impacto</span>
+      <span>Diapositivas en minutos</span>
+      <span>Infografías técnicas</span>
+      <span>Guiones y locución</span>
+      <span>Portadas de informe</span>
+      <span>Todo en versión gratuita</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="perfil">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="dot"></span>Para qué te sirve de verdad</span>
+      <h2>Esto no es coleccionar herramientas. Es tu perfil profesional.</h2>
+    </div>
+    <div class="checks">
+      <div class="shell rv"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Destaca en el puesto que ya tienes</b><p>Hoy las empresas buscan profesionales que manejen IA. Quien la domina entrega antes, con mejor forma y con menos errores.</p></div>
+      </div></div>
+      <div class="shell rv d1"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Prepárate para lo que viene</b><p>No hace falta adelantarse diez años: basta con no quedarse atrás este. La curva se aprende practicando una vez por semana.</p></div>
+      </div></div>
+      <div class="shell rv d2"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Resuelve el cuello de botella de tu equipo</b><p>Lo que hoy frena a tu área probablemente ya lo resolvió alguien de la comunidad con dos herramientas gratuitas.</p></div>
+      </div></div>
+      <div class="shell rv d3"><div class="core">
+        <div class="ck"><svg viewBox="0 0 24 24"><use href="#ok"/></svg></div>
+        <div><b>Trae tu problema, la comunidad lo resuelve</b><p>Cuéntanos qué te está costando en tu campo profesional y lo trabajamos en una sesión. Esa es la parte que no se compra en un curso grabado.</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="alt" id="quien">
+  <div class="wrap mentor-grid mentor">
+    <div class="photo rv">
+      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" loading="lazy">
+      <div class="badge"><img src="../assets/logo-equilibria.webp" alt="">CEO de Equilibria</div>
+    </div>
+    <div class="rv d1">
+      <span class="eyebrow"><span class="dot"></span>Quién guía la comunidad</span>
+      <h2>Jilder Michael Castillo Cabrera</h2>
+      <div class="role">Ingeniero ambiental · Fundador de la Comunidad de IA aplicada al Medio Ambiente</div>
+      <p class="bio">Formación práctica en gestión, supervisión y fiscalización ambiental, y creador de herramientas con inteligencia artificial para el sector. Lleva la IA al trabajo real del profesional: documentos, datos, decisiones y proyectos propios.</p>
+      <ul>
+        <li>Experiencia en supervisión y fiscalización ambiental en el Perú.</li>
+        <li>Desarrolla apps, flujos y asistentes con IA para equipos ambientales.</li>
+        <li>Enseña con casos reales, en lenguaje claro y aplicable desde el primer día.</li>
+      </ul>
+      <blockquote>«No hay una IA que sea la mejor. Hay una que es perfecta para la tarea que tienes delante, y aprender a elegirla es la habilidad.»<span>Equilibria · Comunidad de IA</span></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow"><span class="dot"></span>Preguntas frecuentes</span>
+      <h2>Lo que necesitas saber antes de entrar</h2>
+    </div>
+    <div class="faq rv d1">
+      <details open>
+        <summary>¿Tengo que pagar una IA para seguir las sesiones?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">No. Todo se puede seguir con planes gratuitos. Cuando una versión de pago marca una diferencia real te lo decimos, pero nunca es un requisito para practicar con nosotros.</div>
+      </details>
+      <details>
+        <summary>¿Por cuál me conviene empezar?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Depende de lo que hagas todos los días, y eso es justo lo que resolvemos en la primera sesión. Si quieres una sola para empezar hoy, empieza por ChatGPT; si tu trabajo son documentos largos, por Claude.</div>
+      </details>
+      <details>
+        <summary>¿Sirve si no soy del área ambiental?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Sí. Los ejemplos vienen del sector ambiental porque es nuestro campo, pero comparar herramientas, combinarlas y crear contenido sirve igual en cualquier profesión.</div>
+      </details>
+      <details>
+        <summary>¿Necesito saber de tecnología?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">No. Todo se explica desde cero y se usa desde el navegador. No se instala nada ni se programa nada.</div>
+      </details>
+      <details>
+        <summary>¿Puedo traer mi propio problema?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">Sí, y es lo que más recomendamos. Lo planteas en el grupo y lo trabajamos en una de las sesiones de los viernes.</div>
+      </details>
+      <details>
+        <summary>¿El grupo me va a llenar de mensajes?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary>
+        <div class="a">No. Se usa para el enlace de cada viernes, materiales y dudas de la comunidad. Puedes salir cuando quieras.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="shell rv">
+      <div class="core">
+        <img src="../assets/ring.webp" class="ring2" alt="" loading="lazy">
+        <span class="eyebrow live"><span class="dot"></span><span>Próxima sesión: <span data-fecha="min">este viernes</span> · 7:00 pm</span></span>
+        <h2>Deja de usar una sola IA para todo.</h2>
+        <p>Entra al grupo hoy. Este viernes comparamos herramientas en vivo sobre un caso real y sales sabiendo exactamente cuál abrir para cada cosa que haces.</p>
+        <div class="actions">
+          <a class="btn grad big" href="gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+          <p class="cta-note" style="justify-content:center"><span>Gratis</span><span>·</span><span>Sin spam</span><span>·</span><span>Sales cuando quieras</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting">
+    <p>Equilibria Consulting · Comunidad de IA aplicada al Medio Ambiente · <span id="year"></span></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn grad" href="gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+</div>
+
+<script src="../assets/eq.js"></script>
+</body>
+</html>
