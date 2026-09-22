@@ -91,7 +91,7 @@ h1,h2,h3{font-family:"Outfit",ui-sans-serif,system-ui,sans-serif;letter-spacing:
 .micro span{display:inline-flex;align-items:center;gap:.35rem}
 .micro svg{width:.9rem;height:.9rem;stroke:var(--acc);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .hshot{position:relative}
-.hshot img{width:100%;border-radius:1.6rem;animation:float 8s var(--ease) infinite alternate}
+.hshot img{width:100%;height:auto;border-radius:1.6rem;animation:float 8s var(--ease) infinite alternate}
 @keyframes float{from{transform:translateY(0)}to{transform:translateY(-14px)}}
 .hbadge{position:absolute;left:-.5rem;bottom:1rem;background:#fff;border-radius:1.1rem;padding:.75rem .95rem;box-shadow:0 0 0 1px var(--line),0 24px 50px -24px rgba(11,16,32,.4);display:flex;align-items:center;gap:.7rem}
 .hbadge i{width:2.1rem;height:2.1rem;border-radius:.7rem;background:var(--wa);display:grid;place-items:center;font-style:normal;flex:none}
@@ -140,7 +140,7 @@ section{padding:5.5rem 0}
 .row li{display:flex;gap:.6rem;font-size:.95rem;color:var(--ink-2)}
 .row li svg{width:1.05rem;height:1.05rem;flex:none;margin-top:.32rem;stroke:var(--acc);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .frame{background:var(--paper-2);padding:.6rem;border-radius:1.8rem;box-shadow:0 0 0 1px var(--line)}
-.frame img{border-radius:1.3rem;width:100%}
+.frame img{border-radius:1.3rem;width:100%;height:auto}
 
 /* chips */
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;max-width:900px;margin:2.2rem auto 0}
@@ -176,10 +176,10 @@ section{padding:5.5rem 0}
 
 /* mentor */
 .mentor{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.6rem;align-items:center}
-.photo{position:relative;border-radius:1.8rem;overflow:hidden;background:linear-gradient(160deg,#E7EEFF,#F3E9FF);aspect-ratio:4/4.5;box-shadow:0 40px 80px -40px rgba(11,16,32,.4)}
-.photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:97%;width:auto}
+.photo{position:relative;border-radius:1.8rem;overflow:hidden;background:linear-gradient(160deg,#E7EEFF,#F3E9FF);box-shadow:0 40px 80px -40px rgba(11,16,32,.4)}
+.photo img{display:block;width:100%;height:auto}
 .photo .tag{position:absolute;left:1rem;bottom:1rem;background:rgba(255,255,255,.94);padding:.55rem .85rem;border-radius:.9rem;font-size:.78rem;font-weight:700;display:flex;gap:.5rem;align-items:center;box-shadow:0 0 0 1px var(--line)}
-.photo .tag img{position:static;transform:none;height:17px;width:auto}
+.photo .tag img{position:static;transform:none;height:17px;width:auto;aspect-ratio:640/230}
 .mentor h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;margin-top:.8rem}
 .mentor .role{margin-top:.5rem;font-weight:700;color:var(--acc)}
 .mentor p{margin-top:1rem;color:var(--ink-2)}
@@ -215,8 +215,15 @@ footer img{height:25px;width:auto;opacity:.85}
 .sticky.show{transform:none}
 .sticky .btn{width:100%;justify-content:space-between}
 
-.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+/* --- efectos de scroll --- */
+.eq-progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:70;pointer-events:none;background:transparent}
+.eq-progress i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--grad);will-change:transform}
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .75s var(--ease),transform .75s var(--ease);will-change:opacity,transform}
 .js .rv.in{opacity:1;transform:none}
+.js .frame,.js .gal figure,.js .hshot{overflow:hidden}
+.js .frame img,.js .gal figure img{transform:scale(1.06);transition:transform 1.1s var(--ease)}
+.js .rv.in .frame img,.js .frame.in img,.js .gal figure.in img{transform:none}
+@media (prefers-reduced-motion:reduce){.eq-progress{display:none}.js .frame img,.js .gal figure img{transform:none}}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
 @media (max-width:1000px){
@@ -260,9 +267,9 @@ footer img{height:25px;width:auto;opacity:.85}
 </defs></svg>
 
 <nav class="nav">
-  <a href="#"><img src="../assets/logo-equilibria.webp" alt="Equilibria"></a>
+  <a href="#"><img src="../assets/logo-equilibria.webp" alt="Equilibria" width="640" height="230"></a>
   <div class="lk"><a href="#como">Cómo funciona</a><a href="#construir">Qué construyes</a><a href="#faq">Preguntas</a></div>
-  <a class="btn" href="gracias" data-cta="nav">Unirme<span class="ic"><svg><use href="#wa"/></svg></span></a>
+  <a class="btn" href="/crea-con-ia/gracias" data-cta="nav">Unirme<span class="ic"><svg><use href="#wa"/></svg></span></a>
 </nav>
 
 <header class="hero">
@@ -276,7 +283,7 @@ footer img{height:25px;width:auto;opacity:.85}
         <span>Sin código</span><span>Sin costo</span><span>En español</span><span>En vivo</span><span>Te llevas el enlace</span>
       </div>
       <div class="cta-wrap rv d3">
-        <a class="btn xl" href="gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+        <a class="btn xl" href="/crea-con-ia/gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
         <p class="micro">
           <span><svg><use href="#ok"/></svg>100% gratis</span>
           <span><svg><use href="#ok"/></svg>Viernes 7:00 pm (hora Perú)</span>
@@ -342,7 +349,7 @@ footer img{height:25px;width:auto;opacity:.85}
           <li><svg><use href="#ok"/></svg>Preparamos el prompt maestro de tu proyecto.</li>
         </ul>
       </div>
-      <div class="frame"><img src="../assets/escena-escritorio.webp" alt="Diseñando la aplicación con IA" loading="lazy"></div>
+      <div class="frame"><img src="../assets/escena-escritorio.webp" alt="Diseñando la aplicación con IA" loading="lazy" width="1200" height="1074"></div>
     </div>
 
     <div class="row rv">
@@ -355,7 +362,7 @@ footer img{height:25px;width:auto;opacity:.85}
           <li><svg><use href="#ok"/></svg>Tú replicas en tu computadora en simultáneo.</li>
         </ul>
       </div>
-      <div class="frame"><img src="../assets/paso-construir.webp" alt="Construyendo la aplicación en vivo con IA" loading="lazy"></div>
+      <div class="frame"><img src="../assets/paso-construir.webp" alt="Construyendo la aplicación en vivo con IA" loading="lazy" width="1200" height="896"></div>
     </div>
 
     <div class="row rv">
@@ -368,7 +375,7 @@ footer img{height:25px;width:auto;opacity:.85}
           <li><svg><use href="#ok"/></svg>Listo para tu CV, tu portafolio o tu propuesta.</li>
         </ul>
       </div>
-      <div class="frame"><img src="../assets/paso-publicar.webp" alt="Aplicación publicada en internet con su enlace" loading="lazy"></div>
+      <div class="frame"><img src="../assets/paso-publicar.webp" alt="Aplicación publicada en internet con su enlace" loading="lazy" width="1200" height="896"></div>
     </div>
   </div>
 </section>
@@ -436,8 +443,8 @@ footer img{height:25px;width:auto;opacity:.85}
 <section id="quien" style="background:#fff">
   <div class="wrap mentor">
     <div class="photo rv">
-      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" loading="lazy">
-      <div class="tag"><img src="../assets/logo-equilibria.webp" alt="">CEO de Equilibria</div>
+      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" width="568" height="900">
+      <div class="tag"><img src="../assets/logo-equilibria.webp" alt="" width="640" height="230">CEO de Equilibria</div>
     </div>
     <div class="rv d1">
       <span class="eyebrow">Quién guía la comunidad</span>
@@ -477,7 +484,7 @@ footer img{height:25px;width:auto;opacity:.85}
     <h2>Tu idea lleva demasiado tiempo esperando.</h2>
     <p>Entra al grupo hoy. Este viernes empezamos a construir y sales de la sesión con algo que existe y que puedes abrir en tu teléfono.</p>
     <div class="cta-wrap">
-      <a class="btn xl" href="gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+      <a class="btn xl" href="/crea-con-ia/gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
       <p class="micro"><span>Gratis</span><span>·</span><span>Sin spam</span><span>·</span><span>Sales cuando quieras</span></p>
     </div>
   </div></div>
@@ -485,11 +492,11 @@ footer img{height:25px;width:auto;opacity:.85}
 </main>
 
 <footer><div class="wrap r">
-  <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting">
+  <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting" width="640" height="230">
   <p>Equilibria Consulting · Comunidad de IA aplicada al Medio Ambiente · <span id="year"></span></p>
 </div></footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a></div>
+<div class="sticky" id="sticky"><a class="btn" href="/crea-con-ia/gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a></div>
 <script src="../assets/eq.js"></script>
 </body>
 </html>

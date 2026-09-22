@@ -86,7 +86,7 @@ h1,h2,h3{font-family:"Outfit",ui-sans-serif,system-ui,sans-serif;letter-spacing:
 .micro span{display:inline-flex;align-items:center;gap:.35rem}
 .micro svg{width:.9rem;height:.9rem;stroke:var(--acc-2);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .hshot{position:relative}
-.hshot img{width:100%;border-radius:1.6rem;animation:float 8s var(--ease) infinite alternate}
+.hshot img{width:100%;height:auto;border-radius:1.6rem;animation:float 8s var(--ease) infinite alternate}
 @keyframes float{from{transform:translateY(0)}to{transform:translateY(-14px)}}
 
 .ribbon{background:var(--ink);transform:rotate(-2.2deg) scale(1.06);margin:3.5rem 0;padding:.85rem 0;overflow:hidden;box-shadow:0 22px 50px -26px rgba(18,16,28,.8)}
@@ -147,7 +147,7 @@ section{padding:5.5rem 0}
 
 .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.6rem}
 .frame{background:var(--paper-2);padding:.6rem;border-radius:1.8rem;box-shadow:0 0 0 1px var(--line)}
-.frame img{border-radius:1.3rem;width:100%}
+.frame img{border-radius:1.3rem;width:100%;height:auto}
 .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
 .chips span{padding:.55rem 1rem;border-radius:999px;background:#fff;font-size:.9rem;font-weight:600;box-shadow:0 0 0 1px var(--line)}
 
@@ -157,10 +157,10 @@ section{padding:5.5rem 0}
 .quote span{position:relative;display:block;margin-top:1.2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700}
 
 .mentor{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.6rem;align-items:center}
-.photo{position:relative;border-radius:1.8rem;overflow:hidden;background:linear-gradient(160deg,#E2FBFA,#F1E6FF);aspect-ratio:4/4.5;box-shadow:0 40px 80px -40px rgba(18,16,28,.4)}
-.photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:97%;width:auto}
+.photo{position:relative;border-radius:1.8rem;overflow:hidden;background:linear-gradient(160deg,#E2FBFA,#F1E6FF);box-shadow:0 40px 80px -40px rgba(18,16,28,.4)}
+.photo img{display:block;width:100%;height:auto}
 .photo .tag{position:absolute;left:1rem;bottom:1rem;background:rgba(255,255,255,.94);padding:.55rem .85rem;border-radius:.9rem;font-size:.78rem;font-weight:700;display:flex;gap:.5rem;align-items:center;box-shadow:0 0 0 1px var(--line)}
-.photo .tag img{position:static;transform:none;height:17px;width:auto}
+.photo .tag img{position:static;transform:none;height:17px;width:auto;aspect-ratio:640/230}
 .mentor h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;margin-top:.8rem}
 .mentor .role{margin-top:.5rem;font-weight:700;color:var(--acc-2)}
 .mentor p{margin-top:1rem;color:var(--ink-2)}
@@ -192,8 +192,15 @@ footer .r{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;ali
 footer img{height:25px;width:auto;opacity:.85}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(250,250,252,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 -1px 0 var(--line);transform:translateY(110%);transition:transform .6s var(--ease);display:none}
 .sticky.show{transform:none}.sticky .btn{width:100%;justify-content:space-between}
-.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+/* --- efectos de scroll --- */
+.eq-progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:70;pointer-events:none;background:transparent}
+.eq-progress i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--grad);will-change:transform}
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .75s var(--ease),transform .75s var(--ease);will-change:opacity,transform}
 .js .rv.in{opacity:1;transform:none}
+.js .frame,.js .gal figure,.js .hshot{overflow:hidden}
+.js .frame img,.js .gal figure img{transform:scale(1.06);transition:transform 1.1s var(--ease)}
+.js .rv.in .frame img,.js .frame.in img,.js .gal figure.in img{transform:none}
+@media (prefers-reduced-motion:reduce){.eq-progress{display:none}.js .frame img,.js .gal figure img{transform:none}}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
 @media (max-width:1000px){
@@ -235,9 +242,9 @@ footer img{height:25px;width:auto;opacity:.85}
 </defs></svg>
 
 <nav class="nav">
-  <a href="#"><img src="../assets/logo-equilibria.webp" alt="Equilibria"></a>
+  <a href="#"><img src="../assets/logo-equilibria.webp" alt="Equilibria" width="640" height="230"></a>
   <div class="lk"><a href="#matriz">Cuál para qué</a><a href="#pagar">¿Pagar?</a><a href="#faq">Preguntas</a></div>
-  <a class="btn" href="gracias" data-cta="nav">Unirme<span class="ic"><svg><use href="#wa"/></svg></span></a>
+  <a class="btn" href="/mejores-ias/gracias" data-cta="nav">Unirme<span class="ic"><svg><use href="#wa"/></svg></span></a>
 </nav>
 
 <header class="hero">
@@ -257,7 +264,7 @@ footer img{height:25px;width:auto;opacity:.85}
         <span><i style="background:#4D6BFE"></i>DeepSeek</span>
       </div>
       <div class="cta-wrap rv d3">
-        <a class="btn xl" href="gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+        <a class="btn xl" href="/mejores-ias/gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
         <p class="micro">
           <span><svg><use href="#ok"/></svg>100% gratis</span>
           <span><svg><use href="#ok"/></svg>Viernes 7:00 pm (hora Perú)</span>
@@ -368,7 +375,7 @@ footer img{height:25px;width:auto;opacity:.85}
           <span>Diapositivas en minutos</span><span>Infografías técnicas</span><span>Portadas de informe</span>
         </div>
       </div>
-      <div class="frame rv d1"><img src="../assets/escena-contenido.webp" alt="Imágenes, videos y presentaciones creadas con IA" loading="lazy"></div>
+      <div class="frame rv d1"><img src="../assets/escena-contenido.webp" alt="Imágenes, videos y presentaciones creadas con IA" loading="lazy" width="1200" height="896"></div>
     </div>
   </div>
 </section>
@@ -398,8 +405,8 @@ footer img{height:25px;width:auto;opacity:.85}
 <section id="quien">
   <div class="wrap mentor">
     <div class="photo rv">
-      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" loading="lazy">
-      <div class="tag"><img src="../assets/logo-equilibria.webp" alt="">CEO de Equilibria</div>
+      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" width="568" height="900">
+      <div class="tag"><img src="../assets/logo-equilibria.webp" alt="" width="640" height="230">CEO de Equilibria</div>
     </div>
     <div class="rv d1">
       <span class="eyebrow">Quién guía la comunidad</span>
@@ -439,7 +446,7 @@ footer img{height:25px;width:auto;opacity:.85}
     <h2>Deja de usar una sola IA para todo.</h2>
     <p>Entra al grupo hoy. Este viernes comparamos herramientas en vivo sobre un caso real y sales sabiendo exactamente cuál abrir para cada cosa que haces.</p>
     <div class="cta-wrap">
-      <a class="btn xl" href="gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+      <a class="btn xl" href="/mejores-ias/gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
       <p class="micro"><span>Gratis</span><span>·</span><span>Sin spam</span><span>·</span><span>Sales cuando quieras</span></p>
     </div>
   </div></div>
@@ -447,11 +454,11 @@ footer img{height:25px;width:auto;opacity:.85}
 </main>
 
 <footer><div class="wrap r">
-  <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting">
+  <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting" width="640" height="230">
   <p>Equilibria Consulting · Comunidad de IA aplicada al Medio Ambiente · <span id="year"></span></p>
 </div></footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a></div>
+<div class="sticky" id="sticky"><a class="btn" href="/mejores-ias/gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a></div>
 <script src="../assets/eq.js"></script>
 </body>
 </html>
