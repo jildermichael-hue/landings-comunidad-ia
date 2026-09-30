@@ -234,6 +234,12 @@ footer img{height:25px;width:auto;opacity:.85}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.ribbon .track{flex-wrap:wrap;width:100%;justify-content:center}}
 </style>
+<style>
+.clase-fecha{margin:1.1rem 0 .2rem;padding:.95rem 1.1rem;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 24px -16px rgba(18,16,28,.35);border-left:4px solid var(--wa)}
+.clase-fecha .k{margin:0 0 .3rem;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--wa)}
+.clase-fecha p{margin:0;font-size:.95rem;line-height:1.5;color:var(--ink-2)}
+.clase-fecha b{color:var(--ink)}
+</style>
 </head>
 <body data-landing="mejores-ias">
 
@@ -255,6 +261,10 @@ footer img{height:25px;width:auto;opacity:.85}
       <span class="pill rv"><span class="dot"></span>Comunidad gratuita · Viernes 7:00 pm</span>
       <h1 class="rv d1">No existe la mejor IA. Existe <span class="acc">la correcta para cada tarea</span>.</h1>
       <p class="sub rv d2">Cada viernes a las 7:00 pm probamos en vivo Claude, ChatGPT, Gemini, NotebookLM, Copilot, Perplexity y DeepSeek sobre trabajo real, y aprendemos cuál usar para qué, cuándo y cómo combinarlas. <b>Gratis, y casi todo en versión gratuita.</b></p>
+      <div class="clase-fecha" hidden>
+        <p class="k">Clase en vivo · Viernes 2 de octubre · 7:00 pm</p>
+        <p>IA para <b>presentaciones, redacción, imágenes y video, e investigación</b>. Y cómo usar <b>NotebookLM y Google AI Studio</b> para diseñar y crear aplicaciones. Gratis.</p>
+      </div>
       <div class="tags rv d2">
         <span><i style="background:#D97757"></i>Claude</span>
         <span><i style="background:#10A37F"></i>ChatGPT</span>
@@ -461,5 +471,6 @@ footer img{height:25px;width:auto;opacity:.85}
 
 <div class="sticky" id="sticky"><a class="btn" href="/mejores-ias/gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a></div>
 <script src="../assets/eq.js"></script>
+<script>(function(){try{if(Date.now()<Date.parse("2026-10-02T20:00:00-05:00")){document.querySelectorAll(".clase-fecha").forEach(function(e){e.hidden=false})}}catch(e){}})();</script>
 </body>
 </html>
