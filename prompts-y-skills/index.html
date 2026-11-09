@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.className+=" js"</script>
+<title>Prompts perfectos con IA · Método PACMAN y +20 prompts galácticos | Comunidad Equilibria</title>
+<meta name="description" content="¿La IA te inventa datos y se equivoca? Curso en vivo de 10 horas: crea prompts perfectos con el método PACMAN, accede a +20 prompts galácticos y crea tu GPT y tu skill que escriben prompts por ti.">
+<meta name="theme-color" content="#F6F8FC">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿La IA se equivoca? Aprende a crear prompts perfectos · Método PACMAN">
+<meta property="og:description" content="Método PACMAN, +20 prompts galácticos y tu propio GPT y skill para crear prompts. Curso en vivo de 10 horas · inicia el viernes 13 de noviembre.">
+<meta property="og:image" content="https://ia-equilibria.vercel.app/assets/og-prompts-y-skills.jpg">
+<meta property="og:url" content="https://ia-equilibria.vercel.app/prompts-y-skills">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../assets/hero-split.webp">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1441853580744350');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1441853580744350&ev=PageView&noscript=1"></noscript>
+<!-- /Meta Pixel -->
+
+<style>
+:root{
+  --paper:#F6F8FC; --paper-2:#EDF1F8; --card:#FFFFFF;
+  --ink:#0B1020; --ink-2:#414A63; --ink-3:#8A93A8;
+  --acc:#2563FF; --acc-2:#8B3DFF; --acc-soft:rgba(37,99,255,.1);
+  --wa:#1FA85A;
+  --line:rgba(11,16,32,.09);
+  --ease:cubic-bezier(.32,.72,0,1);
+  --grad:linear-gradient(95deg,#2563FF,#8B3DFF);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3{font-family:"Outfit",ui-sans-serif,system-ui,sans-serif;letter-spacing:-.03em;line-height:1.03;text-wrap:balance}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+.acc{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---- nav ---- */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:1.4rem;padding:.5rem .5rem .5rem 1.15rem;border-radius:999px;background:rgba(11,16,32,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 18px 40px -18px rgba(11,16,32,.6);width:max-content;max-width:calc(100% - 1.5rem)}
+.nav img{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.95}
+.nav .lk{display:flex;gap:1.2rem;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.72)}
+.nav .lk a{text-decoration:none}
+.nav .lk a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-family:"Outfit",sans-serif;font-weight:700;font-size:.95rem;line-height:1;padding:.75rem .85rem .75rem 1.3rem;border-radius:999px;color:#fff;background:var(--grad);border:0;cursor:pointer;white-space:nowrap;box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 14px 28px -12px rgba(37,99,255,.6);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.btn .ic{width:1.9rem;height:1.9rem;border-radius:999px;background:rgba(255,255,255,.18);display:grid;place-items:center;flex:none;transition:transform .5s var(--ease)}
+.btn .ic svg{width:1rem;height:1rem;fill:#fff}
+.btn:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 22px 38px -14px rgba(37,99,255,.65)}
+.btn:hover .ic{transform:translate(2px,-1px)}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--acc-2);outline-offset:3px}
+.btn.xl{font-size:1.12rem;padding:1.05rem 1.05rem 1.05rem 1.8rem}
+.btn.xl .ic{width:2.5rem;height:2.5rem}.btn.xl .ic svg{width:1.25rem;height:1.25rem}
+.nav .btn{font-size:.84rem;padding:.6rem .6rem .6rem 1rem}
+.nav .btn .ic{width:1.6rem;height:1.6rem}
+
+/* ---- hero ---- */
+.hero{position:relative;padding:8.5rem 0 4rem;overflow:hidden;isolation:isolate}
+.blue{position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(37,99,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,255,.07) 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(ellipse 80% 65% at 50% 25%,#000 20%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 25%,#000 20%,transparent 100%)}
+.glow{position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.g1{width:52vw;height:52vw;max-width:720px;max-height:720px;right:-12vw;top:-16vw;background:radial-gradient(circle,rgba(37,99,255,.18),rgba(37,99,255,.05) 40%,transparent 70%)}
+.g2{width:44vw;height:44vw;max-width:600px;max-height:600px;left:-14vw;top:24vw;background:radial-gradient(circle,rgba(139,61,255,.16),transparent 68%)}
+.hgrid{display:grid;grid-template-columns:1.02fr .98fr;gap:2.5rem;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.45rem .9rem .45rem .65rem;border-radius:999px;background:#fff;color:var(--ink-2);box-shadow:0 0 0 1px var(--line),0 6px 16px -10px rgba(11,16,32,.3)}
+.pill .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--wa);box-shadow:0 0 0 3px rgba(31,168,90,.2);animation:pulse 1.8s var(--ease) infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(31,168,90,.22)}50%{box-shadow:0 0 0 7px rgba(31,168,90,0)}}
+.hero h1{font-size:clamp(2.6rem,5.3vw,4.5rem);font-weight:800;margin-top:1.3rem}
+.hero .sub{margin-top:1.4rem;font-size:clamp(1.05rem,1.35vw,1.22rem);color:var(--ink-2);max-width:50ch;text-wrap:pretty}
+.hero .sub b{color:var(--ink);font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.6rem}
+.tags span{font-size:.78rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:#fff;color:var(--ink-2);box-shadow:0 0 0 1px var(--line)}
+.cta-wrap{margin-top:1.9rem}
+.micro{margin-top:.9rem;font-size:.84rem;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:.3rem .9rem}
+.micro span{display:inline-flex;align-items:center;gap:.35rem}
+.micro svg{width:.9rem;height:.9rem;stroke:var(--acc);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.hshot{position:relative}
+.hshot img{width:100%;height:auto;border-radius:1.6rem;animation:float 8s var(--ease) infinite alternate}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-14px)}}
+.hbadge{position:absolute;left:-.5rem;bottom:1rem;background:#fff;border-radius:1.1rem;padding:.75rem .95rem;box-shadow:0 0 0 1px var(--line),0 24px 50px -24px rgba(11,16,32,.4);display:flex;align-items:center;gap:.7rem}
+.hbadge i{width:2.1rem;height:2.1rem;border-radius:.7rem;background:var(--wa);display:grid;place-items:center;font-style:normal;flex:none}
+.hbadge i svg{width:1.05rem;height:1.05rem;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.hbadge b{display:block;font-size:.84rem;font-family:"Outfit",sans-serif}
+.hbadge span{font-size:.76rem;color:var(--ink-3)}
+
+/* ---- cinta diagonal ---- */
+.ribbon{background:var(--ink);transform:rotate(-2.2deg) scale(1.06);margin:3.5rem 0;padding:.85rem 0;overflow:hidden;box-shadow:0 22px 50px -26px rgba(11,16,32,.8)}
+.ribbon .track{display:flex;gap:2.2rem;width:max-content;animation:slide 34s linear infinite}
+.ribbon:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.ribbon i{display:inline-flex;align-items:center;gap:.55rem;font-family:"Outfit",sans-serif;font-style:normal;font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;white-space:nowrap}
+.ribbon i::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--grad);flex:none}
+
+/* ---- barra de datos ---- */
+.stats{background:var(--ink);border-radius:1.6rem;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;box-shadow:0 40px 80px -40px rgba(11,16,32,.6)}
+.stats div{padding:1.9rem 1.2rem;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-family:"Outfit",sans-serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.03em;background:linear-gradient(120deg,#6FA8FF,#C79BFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{display:block;margin-top:.35rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ---- secciones ---- */
+section{padding:5.5rem 0}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.head{max-width:760px}
+.head h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;margin-top:.9rem}
+.head p{margin-top:1.1rem;color:var(--ink-2);font-size:1.06rem;text-wrap:pretty}
+.mid{text-align:center;margin-inline:auto}
+.rule{width:56px;height:3px;border-radius:99px;background:var(--grad);margin:1.2rem 0}
+.mid .rule{margin-inline:auto}
+
+/* relato */
+.story{max-width:720px;margin-inline:auto;text-align:center}
+.story p{font-size:1.1rem;color:var(--ink-2);margin-top:1.2rem;text-wrap:pretty}
+.story p.big{font-family:"Outfit",sans-serif;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.25;margin-top:2rem}
+.story .acc{font-weight:800}
+
+/* filas numeradas */
+.row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3.5rem}
+.row:nth-child(even) .txt{order:2}
+.num{font-family:"Outfit",sans-serif;font-size:3.4rem;font-weight:900;line-height:1;letter-spacing:-.05em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.row h3{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;margin-top:.7rem}
+.row p{margin-top:.9rem;color:var(--ink-2)}
+.row ul{list-style:none;margin-top:1.1rem;display:grid;gap:.5rem}
+.row li{display:flex;gap:.6rem;font-size:.95rem;color:var(--ink-2)}
+.row li svg{width:1.05rem;height:1.05rem;flex:none;margin-top:.32rem;stroke:var(--acc);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.frame{background:var(--paper-2);padding:.6rem;border-radius:1.8rem;box-shadow:0 0 0 1px var(--line)}
+.frame img{border-radius:1.3rem;width:100%;height:auto}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;max-width:900px;margin:2.2rem auto 0}
+.chips span{padding:.65rem 1.1rem;border-radius:999px;background:#fff;font-size:.93rem;font-weight:600;box-shadow:0 0 0 1px var(--line),0 8px 20px -14px rgba(11,16,32,.35);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.chips span:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--acc-soft),0 14px 26px -12px rgba(37,99,255,.4)}
+
+/* tabla comparativa */
+.vs{margin-top:2.6rem;background:#fff;border-radius:1.5rem;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 30px 60px -40px rgba(11,16,32,.35)}
+.vs table{width:100%;border-collapse:collapse;font-size:.95rem}
+.vs th,.vs td{padding:1rem 1.2rem;text-align:left;border-bottom:1px solid var(--line)}
+.vs thead th{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ink-3);background:var(--paper-2)}
+.vs thead th:last-child{background:linear-gradient(95deg,rgba(37,99,255,.12),rgba(139,61,255,.12));color:var(--acc)}
+.vs td:first-child{font-weight:700;font-family:"Outfit",sans-serif}
+.vs td.no{color:var(--ink-3)}
+.vs td.yes{font-weight:600;background:rgba(37,99,255,.04)}
+.vs tr:last-child td{border-bottom:0}
+.vs .mk{font-weight:800;margin-right:.4rem}
+.vs .mk.x{color:#C4495B}.vs .mk.v{color:var(--wa)}
+
+/* rejilla resultados */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:2.6rem}
+.grid4 div{background:#fff;border-radius:1.3rem;padding:1.5rem;box-shadow:0 0 0 1px var(--line)}
+.grid4 .ico{width:2.6rem;height:2.6rem;border-radius:.85rem;background:var(--paper-2);display:grid;place-items:center;margin-bottom:.9rem}
+.grid4 .ico svg{width:1.25rem;height:1.25rem;stroke:var(--acc);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.grid4 b{font-family:"Outfit",sans-serif;font-size:1.03rem}
+.grid4 p{margin-top:.4rem;font-size:.92rem;color:var(--ink-2)}
+
+/* cita */
+.quote{background:var(--ink);border-radius:1.8rem;padding:3.2rem 2.2rem;text-align:center;position:relative;overflow:hidden}
+.quote::after{content:"";position:absolute;width:520px;height:520px;right:-180px;bottom:-280px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,255,.4),transparent 70%)}
+.quote p{position:relative;font-family:"Outfit",sans-serif;font-size:clamp(1.3rem,2.6vw,2rem);font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.3;max-width:24ch;margin-inline:auto}
+.quote span{position:relative;display:block;margin-top:1.2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700}
+
+/* mentor */
+.mentor{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.6rem;align-items:center}
+.photo{position:relative;border-radius:1.8rem;overflow:hidden;background:linear-gradient(160deg,#E7EEFF,#F3E9FF);box-shadow:0 40px 80px -40px rgba(11,16,32,.4)}
+.photo img{display:block;width:100%;height:auto}
+.photo .tag{position:absolute;left:1rem;bottom:1rem;background:rgba(255,255,255,.94);padding:.55rem .85rem;border-radius:.9rem;font-size:.78rem;font-weight:700;display:flex;gap:.5rem;align-items:center;box-shadow:0 0 0 1px var(--line)}
+.photo .tag img{position:static;transform:none;height:17px;width:auto;aspect-ratio:640/230}
+.mentor h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;margin-top:.8rem}
+.mentor .role{margin-top:.5rem;font-weight:700;color:var(--acc)}
+.mentor p{margin-top:1rem;color:var(--ink-2)}
+.mentor ul{list-style:none;margin-top:1.2rem;display:grid;gap:.6rem}
+.mentor li{display:flex;gap:.7rem;color:var(--ink-2);font-size:.96rem}
+.mentor li::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--grad);flex:none;margin-top:.6rem}
+
+/* faq */
+.faq{max-width:780px;margin:2.4rem auto 0;display:grid;gap:.65rem}
+.faq details{background:#fff;border-radius:1.1rem;box-shadow:0 0 0 1px var(--line);overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.1rem 1.3rem;font-family:"Outfit",sans-serif;font-weight:700;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:1.7rem;height:1.7rem;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;flex:none;transition:transform .5s var(--ease),background .5s var(--ease)}
+.faq summary i svg{width:.85rem;height:.85rem;stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--ink)}
+.faq details[open] summary i svg{stroke:#fff}
+.faq .a{padding:0 1.3rem 1.2rem;color:var(--ink-2);font-size:.96rem}
+
+/* cierre */
+.final{padding:3rem 0 6rem}
+.final .box{position:relative;overflow:hidden;border-radius:2rem;background:var(--ink);padding:4.2rem 1.5rem;text-align:center}
+.final .box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000,transparent 75%)}
+.final .box::after{content:"";position:absolute;width:640px;height:640px;left:50%;top:-320px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(37,99,255,.35),transparent 68%)}
+.final h2{position:relative;font-size:clamp(2rem,4.4vw,3.4rem);font-weight:800;color:#fff;max-width:17ch;margin:1rem auto 0}
+.final p{position:relative;margin-top:1.1rem;color:rgba(255,255,255,.66);max-width:48ch;margin-inline:auto}
+.final p b{color:#fff;font-weight:700}
+.final .cta-wrap{position:relative;display:flex;flex-direction:column;align-items:center}
+.final .pill{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);box-shadow:none}
+.final .micro{color:rgba(255,255,255,.5);justify-content:center}
+footer{padding:2rem 0 7rem;color:var(--ink-3);font-size:.84rem}
+footer .r{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer img{height:25px;width:auto;opacity:.85}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(246,248,252,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 -1px 0 var(--line);transform:translateY(110%);transition:transform .6s var(--ease);display:none}
+.sticky.show{transform:none}
+.sticky .btn{width:100%;justify-content:space-between}
+
+/* --- efectos de scroll --- */
+.eq-progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:70;pointer-events:none;background:transparent}
+.eq-progress i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--grad);will-change:transform}
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .75s var(--ease),transform .75s var(--ease);will-change:opacity,transform}
+.js .rv.in{opacity:1;transform:none}
+.js .frame,.js .gal figure,.js .hshot{overflow:hidden}
+.js .frame img,.js .gal figure img{transform:scale(1.06);transition:transform 1.1s var(--ease)}
+.js .rv.in .frame img,.js .frame.in img,.js .gal figure.in img{transform:none}
+@media (prefers-reduced-motion:reduce){.eq-progress{display:none}.js .frame img,.js .gal figure img{transform:none}}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+@media (max-width:1000px){
+  .hgrid{grid-template-columns:1fr;gap:2.5rem}
+  .hshot{max-width:560px;margin-inline:auto;width:100%}
+  .hshot img{animation:none}
+  .row,.mentor{grid-template-columns:1fr;gap:1.8rem}
+  .row:nth-child(even) .txt{order:0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats div:nth-child(2){border-right:0}
+  .stats div:nth-child(1),.stats div:nth-child(2){border-bottom:1px solid rgba(255,255,255,.1)}
+  .photo{max-width:400px;margin-inline:auto}
+  .nav .lk{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding-top:6.5rem}
+  section{padding:3.8rem 0}
+  .nav{top:10px}
+  .btn.xl{width:100%;justify-content:space-between;font-size:1rem;padding:.95rem .8rem .95rem 1.3rem;white-space:normal;text-align:left;line-height:1.2}
+  .sticky{display:block}
+  .stats{grid-template-columns:1fr}
+  .stats div{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .stats div:last-child{border-bottom:0}
+  .vs{overflow-x:auto}
+  .vs table{min-width:520px}
+  .quote{padding:2.4rem 1.3rem}
+  .final .box{padding:3rem 1.1rem}
+  footer{padding-bottom:8rem}
+  footer .r{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .hbadge{left:0;bottom:-.5rem;padding:.6rem .8rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.ribbon .track{flex-wrap:wrap;width:100%;justify-content:center}}
+</style>
+<style>
+.clase-fecha{margin:1.1rem 0 .2rem;padding:.95rem 1.1rem;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 24px -16px rgba(18,16,28,.35);border-left:4px solid var(--wa)}
+.clase-fecha .k{margin:0 0 .3rem;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--wa)}
+.clase-fecha p{margin:0;font-size:.95rem;line-height:1.5;color:var(--ink-2)}
+.clase-fecha b{color:var(--ink)}
+.pac .ico.l,.grid4 .ico.n{font-family:"Outfit",sans-serif;font-weight:900;font-size:1.25rem;line-height:1;color:#fff;background:var(--grad);display:flex;align-items:center;justify-content:center}
+.grid4 .ico.n{font-size:.95rem}
+/* dolor */
+.pains{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.6rem}
+.pains div{background:#fff;border-radius:1.3rem;padding:1.4rem;box-shadow:0 0 0 1px var(--line);position:relative}
+.pains i{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:.8rem;background:#FFE9EA;color:#D63B4A;font:900 1.15rem "Outfit",sans-serif;font-style:normal}
+.pains b{display:block;margin-top:.9rem;font-family:"Outfit",sans-serif;font-size:1.08rem;line-height:1.2}
+.pains p{margin-top:.4rem;font-size:.92rem;color:var(--ink-2)}
+.turn{margin-top:2.6rem;text-align:center;font-family:"Outfit",sans-serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+/* pruebas */
+.proof-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:center;margin-top:3rem}
+.paper{background:#fff;border-radius:1.2rem;padding:.55rem;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(11,16,32,.45)}
+.paper img{border-radius:.8rem;width:100%;height:auto}
+.paper figcaption{display:flex;align-items:center;gap:.5rem;padding:.7rem .4rem .2rem;font-size:.82rem;font-weight:700;color:var(--ink-2)}
+.paper figcaption em{font-style:normal;white-space:nowrap;flex:none;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;border-radius:99px;background:var(--paper-2);color:var(--acc)}
+.arrow{display:flex;align-items:center;gap:.8rem;margin:1.2rem 0;font-family:"Outfit",sans-serif;font-weight:800;color:var(--acc)}
+.arrow:before,.arrow:after{content:"";flex:1;height:2px;background:var(--grad);border-radius:2px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+.trio .paper img{aspect-ratio:3/2;object-fit:cover;object-position:top}
+.stamp{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;padding:.6rem 1rem;border-radius:99px;background:rgba(31,168,90,.1);color:#11804A;font-weight:700;font-size:.9rem}
+/* galaxia */
+.galaxy{position:relative;color:#fff;background:#070B1E;overflow:hidden;isolation:isolate}
+.galaxy:before{content:"";position:absolute;inset:0;z-index:-2;background:url(../assets/galaxia.webp) center 65%/cover;opacity:.55}
+.galaxy:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#070B1E 0%,rgba(7,11,30,.7) 30%,rgba(7,11,30,.82) 70%,#070B1E 100%)}
+.galaxy .eyebrow{color:#7DE3F5}
+.galaxy .head h2{color:#fff}
+.galaxy .head p{color:rgba(255,255,255,.78)}
+.galaxy .acc{background:linear-gradient(100deg,#67E8F9,#A5B4FC 50%,#D8B4FE);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lib{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.8rem}
+.lib .col{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:1.4rem;padding:1.4rem;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lib h3{font-size:1.1rem;font-weight:800;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.lib h3 span{font-size:.7rem;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7DE3F5;white-space:nowrap}
+.lib ol{list-style:none;margin-top:.9rem}
+.lib li{display:flex;gap:.7rem;padding:.48rem 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:.9rem;line-height:1.35;color:rgba(255,255,255,.86)}
+.lib li:last-child{border:0}
+.lib li em{font-style:normal;font-family:"Outfit",sans-serif;font-weight:800;font-size:.78rem;color:#A5B4FC;min-width:3.1rem;padding-top:.08rem}
+.libcta{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:center;text-align:center}
+.libcta p{color:rgba(255,255,255,.75);font-size:.95rem}
+/* herramientas */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.8rem}
+.tool{border-radius:1.6rem;padding:2rem;background:#fff;box-shadow:0 0 0 1px var(--line),0 30px 60px -40px rgba(11,16,32,.4);position:relative;overflow:hidden}
+.tool:after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-110px;border-radius:50%;background:radial-gradient(circle,rgba(139,61,255,.18),transparent 70%)}
+.tool .k{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--acc-2)}
+.tool .k img{width:1.4rem;height:1.4rem;border-radius:.35rem}
+.tool h3{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;margin-top:.8rem}
+.tool p{margin-top:.7rem;color:var(--ink-2)}
+.tool .chat{margin-top:1.2rem;display:grid;gap:.5rem;font-size:.88rem}
+.tool .chat span{padding:.65rem .9rem;border-radius:1rem;max-width:88%}
+.tool .chat .u{background:var(--paper-2);justify-self:end;border-bottom-right-radius:.3rem}
+.tool .chat .a{background:linear-gradient(135deg,rgba(37,99,255,.1),rgba(139,61,255,.12));border-bottom-left-radius:.3rem}
+.tool .chat .a b{color:var(--acc-2)}
+/* hero split */
+@media (min-width:1001px){.hgrid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.hero h1{font-size:clamp(2.4rem,4.4vw,3.9rem)}
+.hshot{margin-top:3.2rem}
+.hshot .hbadge{left:50%;bottom:-1.6rem;transform:translateX(-50%);white-space:nowrap}
+@media (max-width:1000px){.hshot{margin-top:0}}
+.js .hshot{overflow:visible!important}
+@media (max-width:640px){.hshot .hbadge{display:none}.hshot .vs-tag{font-size:.62rem;top:.6rem;padding:.35rem .6rem}.hshot .vs-tag.no{left:.6rem}.hshot .vs-tag.si{right:.6rem}}
+.hshot .vs-tag{position:absolute;top:1rem;z-index:2;font-family:"Outfit",sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .8rem;border-radius:99px;box-shadow:0 10px 24px -12px rgba(11,16,32,.5)}
+.hshot .vs-tag.no{left:1rem;background:#fff;color:#C4364A}
+.hshot .vs-tag.si{right:1rem;background:var(--wa);color:#fff}
+.hshot img{animation:none;box-shadow:0 40px 80px -36px rgba(11,16,32,.55)}
+/* programa */
+.prog{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.8rem}
+.ses{background:#fff;border-radius:1.5rem;box-shadow:0 0 0 1px var(--line),0 24px 50px -36px rgba(11,16,32,.4);overflow:hidden}
+.ses .top{padding:1.2rem 1.4rem;color:#fff;background:var(--grad);display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.ses.s3 .top{background:linear-gradient(95deg,#6D28D9,#9304FF)}
+.ses.s4 .top{background:linear-gradient(95deg,#0891B2,#2563FF)}
+.ses .top small{display:block;font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.ses .top h3{font-size:1.3rem;font-weight:800;margin-top:.35rem;line-height:1.15}
+.ses .when{text-align:right;font-family:"Outfit",sans-serif;font-weight:800;font-size:.95rem;line-height:1.3;white-space:nowrap}
+.ses .when span{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-weight:600;font-size:.78rem;opacity:.9}
+.ses .mod{display:inline-block;margin-top:.6rem;font-size:.7rem;font-weight:800;padding:.25rem .65rem;border-radius:99px;background:rgba(255,255,255,.2)}
+.ses ol{list-style:none;padding:.6rem 1.4rem 1.2rem}
+.ses li{display:flex;gap:.7rem;padding:.5rem 0;border-bottom:1px dashed var(--line);font-size:.92rem;line-height:1.4;color:var(--ink-2)}
+.ses li:last-child{border:0}
+.ses li em{font-style:normal;font-family:"Outfit",sans-serif;font-weight:800;font-size:.8rem;color:var(--acc);min-width:2.3rem;padding-top:.08rem}
+.ses li.hl{color:var(--ink);font-weight:700}.ses li.hl em{color:var(--acc-2)}
+.totals{margin-top:1.4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.totals div{background:var(--ink);border-radius:1.2rem;padding:1.2rem;text-align:center}
+.totals b{display:block;font-family:"Outfit",sans-serif;font-size:2rem;font-weight:800;color:#7DE3F5;letter-spacing:-.02em}
+.totals span{display:block;margin-top:.2rem;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.6rem}
+.perks div{background:#fff;border-radius:1.3rem;padding:1.5rem;box-shadow:0 0 0 1px var(--line)}
+.perks div.big{background:linear-gradient(150deg,#EEF3FF,#F4ECFF);box-shadow:0 0 0 1px rgba(37,99,255,.18)}
+.perks .e{font-size:1.6rem;line-height:1}
+.perks b{display:block;margin-top:.7rem;font-family:"Outfit",sans-serif;font-size:1.1rem}
+.perks p{margin-top:.35rem;font-size:.92rem;color:var(--ink-2)}
+@media (max-width:1000px){.prog,.perks{grid-template-columns:1fr}.totals{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.hgrid>.hshot{order:-1}.hero{padding-top:5.6rem}.ses .top{flex-direction:column}.ses .when{text-align:left}}
+@media (max-width:1000px){.pains{grid-template-columns:1fr 1fr}.proof-grid,.tools,.lib{grid-template-columns:1fr}.trio{grid-template-columns:1fr}}
+@media (max-width:640px){.pains{grid-template-columns:1fr}.tool{padding:1.5rem}}
+</style>
+</head>
+<body data-landing="crea-con-ia">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></symbol>
+<symbol id="ok" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</defs></svg>
+
+<nav class="nav">
+  <a href="#"><img src="../assets/logo-equilibria.webp" alt="Equilibria" width="640" height="230"></a>
+  <div class="lk"><a href="#pacman">Método PACMAN</a><a href="#resultados">Resultados</a><a href="#programa">Programa</a><a href="#biblioteca">Prompts galácticos</a><a href="#faq">Preguntas</a></div>
+  <a class="btn" href="/prompts-y-skills/gracias" data-cta="nav">Unirme<span class="ic"><svg><use href="#wa"/></svg></span></a>
+</nav>
+
+<header class="hero">
+  <div class="blue"></div><div class="glow g1"></div><div class="glow g2"></div>
+  <div class="wrap hgrid">
+    <div>
+      <span class="pill rv"><span class="dot"></span>Curso en vivo · Inicia viernes 13 de noviembre</span>
+      <h1 class="rv d1">¿La IA te inventa datos y se equivoca? Aprende a crear <span class="acc">prompts perfectos</span>.</h1>
+      <p class="sub rv d2">El problema no es la IA: es el prompt. Aprende prompt engineering profesional con el <b>método PACMAN</b>, validado con resultados comprobados, accede a <b>+20 prompts galácticos</b> y crea <b>tu propio GPT y tu skill</b> que escriben prompts por ti. Para cualquier área profesional.</p>
+      <div class="clase-fecha" hidden>
+        <p class="k">4 sesiones en vivo · 10 horas de IA aplicada</p>
+        <p><b>Viernes 13 y sábado 14 · viernes 20 y sábado 21 de noviembre.</b> Viernes de 7:00 a 9:00 pm y sábados de 7:00 a 10:00 pm (hora Perú).</p>
+      </div>
+      <div class="tags rv d2">
+        <span>Método PACMAN</span><span>+20 prompts galácticos</span><span>Tu GPT creador de prompts</span><span>Skills para Claude</span><span>Cualquier profesión</span>
+      </div>
+      <div class="cta-wrap rv d3">
+        <a class="btn xl" href="/prompts-y-skills/gracias" data-cta="hero">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+        <p class="micro">
+          <span><svg><use href="#ok"/></svg>10 horas en vivo</span>
+          <span><svg><use href="#ok"/></svg>Teórico-práctico</span>
+          <span><svg><use href="#ok"/></svg>Sin spam</span>
+        </p>
+      </div>
+    </div>
+    <div class="hshot rv d2">
+      <span class="vs-tag no">✕ Sin método</span><span class="vs-tag si">✓ Con PACMAN</span>
+      <img src="../assets/hero-split.webp" alt="Un ingeniero frustrado porque la IA se equivoca y una ingeniera feliz usando el método PACMAN" width="1600" height="904" fetchpriority="high">
+      <div class="hbadge">
+        <i><svg><use href="#ok"/></svg></i>
+        <div><b>Misma IA, otro resultado</b><span>la diferencia es el método PACMAN</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="track">
+    <i>La IA deja de adivinar</i><i>10 horas en vivo</i><i>Método PACMAN</i><i>+20 prompts galácticos</i><i>Tu GPT creador de prompts</i><i>Skills para Claude</i><i>ChatGPT</i><i>Gemini</i><i>Casos reales</i><i>Cualquier profesión</i>
+    <i>La IA deja de adivinar</i><i>10 horas en vivo</i><i>Método PACMAN</i><i>+20 prompts galácticos</i><i>Tu GPT creador de prompts</i><i>Skills para Claude</i><i>ChatGPT</i><i>Gemini</i><i>Casos reales</i><i>Cualquier profesión</i>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats rv">
+    <div><b>+20</b><span>Prompts galácticos</span></div>
+    <div><b>10 h</b><span>IA aplicada en vivo</span></div>
+    <div><b>4</b><span>Sesiones en 2 semanas</span></div>
+    <div><b>24 h</b><span>Acceso a la plataforma</span></div>
+  </div>
+</div>
+
+<main>
+
+<section id="porque">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">El problema</span>
+      <h2>La IA no se equivoca sola. Se equivoca cuando le pides mal.</h2>
+      <div class="rule"></div>
+      <p>ChatGPT, Claude y Gemini responden con total seguridad aunque no tengan la información correcta. Si tu instrucción es corta o ambigua, rellenan los vacíos adivinando. Tú pierdes tiempo corrigiendo, o peor, entregas un trabajo con errores.</p>
+    </div>
+    <div class="pains rv d1">
+      <div><i>!</i><b>Te inventa datos y normas</b><p>Artículos, cifras o fuentes que no existen, escritos como si fueran ciertos.</p></div>
+      <div><i>!</i><b>Respuestas genéricas</b><p>Textos que le sirven a cualquiera y no resuelven tu caso real.</p></div>
+      <div><i>!</i><b>El formato no sirve</b><p>Pediste una matriz o un informe y recibes párrafos sueltos.</p></div>
+      <div><i>!</i><b>Empiezas siempre de cero</b><p>Repites el mismo pedido cada día y vuelves a explicarlo todo.</p></div>
+    </div>
+    <p class="turn rv">La solución es un <span class="acc">prompt bien estructurado</span>. Y eso se aprende.</p>
+  </div>
+</section>
+
+<section id="pacman" style="background:#fff">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">El método PACMAN</span>
+      <h2>Seis piezas que convierten un pedido en un prompt perfecto.</h2>
+      <div class="rule"></div>
+      <p>Creado por el Ing. Jilder Castillo. PACMAN le da a la IA todo lo que necesita para dejar de adivinar: quién responde, qué hace, con qué datos, cómo piensa, qué entrega y qué límites respeta. Es la base de cada prompt galáctico de la comunidad.</p>
+    </div>
+    <div class="grid4 pac rv d1">
+      <div><div class="ico l">P</div><b>Profesión / Rol</b><p>Desde qué especialidad debe responder la IA: evaluador, abogado, auditor, docente, consultor.</p></div>
+      <div><div class="ico l">A</div><b>Actividad</b><p>Qué debe hacer con precisión: analizar, resumir, clasificar, redactar, elaborar una matriz.</p></div>
+      <div><div class="ico l">C</div><b>Contexto</b><p>Los datos reales de tu caso: proyecto, cliente, norma, etapa, público, antecedentes.</p></div>
+      <div><div class="ico l">M</div><b>Mente / Razonamiento</b><p>Cómo debe pensar: técnico, normativo, crítico, paso a paso, con criterios.</p></div>
+      <div><div class="ico l">A</div><b>Ayuda / Resultado</b><p>El formato que necesitas: tabla, matriz, checklist, informe, plan o lista priorizada.</p></div>
+      <div><div class="ico l">N</div><b>Condiciones</b><p>Restricciones, nivel de detalle, supuestos, enfoque y la calidad que exiges.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">La diferencia</span>
+      <h2>Un prompt básico frente a un prompt PACMAN.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="vs rv d1">
+      <table>
+        <thead><tr><th>Criterio</th><th>Prompt básico</th><th>Prompt con método PACMAN</th></tr></thead>
+        <tbody>
+          <tr><td>La respuesta</td><td class="no"><span class="mk x">✗</span>Genérica, sirve para cualquiera</td><td class="yes"><span class="mk v">✓</span>Precisa y aplicable a tu caso</td></tr>
+          <tr><td>El formato</td><td class="no"><span class="mk x">✗</span>El que la IA decida</td><td class="yes"><span class="mk v">✓</span>Tabla, matriz o informe, como lo necesitas</td></tr>
+          <tr><td>Los datos</td><td class="no"><span class="mk x">✗</span>La IA los supone o los inventa</td><td class="yes"><span class="mk v">✓</span>Usa solo tu información y marca lo que no sabe</td></tr>
+          <tr><td>Las correcciones</td><td class="no"><span class="mk x">✗</span>Pedirlo una y otra vez</td><td class="yes"><span class="mk v">✓</span>Ajuste fino en una o dos vueltas</td></tr>
+          <tr><td>Lo que te queda</td><td class="no"><span class="mk x">✗</span>Un chat que se pierde</td><td class="yes"><span class="mk v">✓</span>Un prompt galáctico, un GPT y una skill que reutilizas siempre</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="resultados" style="background:#fff">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">Resultados comprobados</span>
+      <h2>Un prompt galáctico. Una ficha de obligaciones completa.</h2>
+      <div class="rule"></div>
+      <p>Este es un caso real de la comunidad. Con el <b>prompt galáctico N.° 2</b>, hecho con PACMAN, la IA leyó la Ley de Gestión Integral de Residuos Sólidos y su reglamento y armó la ficha de obligaciones ambientales fiscalizables: fuentes, artículos y obligaciones en una matriz lista para revisar.</p>
+    </div>
+    <div class="proof-grid">
+      <figure class="paper rv"><img src="../assets/pg2-prompt.webp" alt="Prompt galáctico N.° 2 escrito con el método PACMAN" width="900" height="786" loading="lazy"><figcaption><em>El prompt</em>Prompt galáctico N.° 2 · método PACMAN</figcaption></figure>
+      <div class="rv d1">
+        <figure class="paper"><img src="../assets/foa-claude.webp" alt="Ficha de obligaciones ambientales fiscalizables generada con Claude" width="1100" height="737" loading="lazy"><figcaption><em>El resultado</em>Ficha de 15 páginas generada con Claude</figcaption></figure>
+        <span class="stamp">✓ De cientos de páginas de norma a una ficha ordenada y verificable</span>
+      </div>
+    </div>
+    <div class="arrow rv">El mismo prompt en tres IAs</div>
+    <div class="trio rv d1">
+      <figure class="paper"><img src="../assets/foa-claude-2.webp" alt="Obligaciones fiscalizables identificadas con Claude" width="1100" height="521" loading="lazy"><figcaption><em>Claude</em>Obligaciones por artículo</figcaption></figure>
+      <figure class="paper"><img src="../assets/foa-chatgpt.webp" alt="Ficha de obligaciones generada con ChatGPT" width="1100" height="753" loading="lazy"><figcaption><em>ChatGPT</em>Ficha de 9 páginas</figcaption></figure>
+      <figure class="paper"><img src="../assets/foa-gemini.webp" alt="Ficha de obligaciones generada con Gemini" width="1100" height="738" loading="lazy"><figcaption><em>Gemini</em>Ficha en formato web</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="biblioteca" class="galaxy">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">Lo que ya tenemos para ti</span>
+      <h2>Accede a <span class="acc">+20 prompts galácticos</span> listos para usar.</h2>
+      <div class="rule"></div>
+      <p>Prompts de alto nivel construidos con el método PACMAN y probados en casos reales. Los usas tal cual o los adaptas a tu trabajo, y en el curso aprendes a crear los tuyos.</p>
+    </div>
+    <div class="lib rv d1">
+      <div class="col"><h3>Gestión ambiental y SEIA <span>PG 00 – 10</span></h3><ol>
+        <li><em>PG 00</em>Impactos potenciales y residuales + plan de manejo ambiental</li>
+        <li><em>PG 01</em>Aspectos e impactos de una etapa del proyecto</li>
+        <li><em>PG 02</em>Obligaciones ambientales fiscalizables por norma</li>
+        <li><em>PG 03</em>¿Impactos significativos? Tipo de IGA</li>
+        <li><em>PG 04</em>¿Requiere certificación? IGA preventivo o correctivo</li>
+        <li><em>PG 05</em>Listado del SEIA y clasificación anticipada</li>
+        <li><em>PG 06</em>Obligaciones del titular (SEIA y LGA)</li>
+        <li><em>PG 07</em>Proceso de elaboración del estudio ambiental</li>
+        <li><em>PG 08</em>Impacto físico, biológico y social</li>
+        <li><em>PG 09</em>Actividades por etapa del proyecto</li>
+        <li><em>PG 10</em>Componentes ambientales según la línea base</li>
+      </ol></div>
+      <div class="col"><h3>Matrices y monitoreo <span>PG 11 – 22</span></h3><ol>
+        <li><em>PG 11</em>Árbol de actividades y vínculo con aspectos</li>
+        <li><em>PG 12</em>Elegir el método de valoración de impactos</li>
+        <li><em>PG 13</em>Identificar, caracterizar y valorar impactos</li>
+        <li><em>PG 14</em>Matriz check list y causa-efecto</li>
+        <li><em>PG 15</em>Matriz 1 de Leopold</li>
+        <li><em>PG 16</em>Matriz 2A de Leopold (cualitativa)</li>
+        <li><em>PG 17</em>Matriz 2B de Leopold (cuantitativa)</li>
+        <li><em>PG 18</em>Matriz 3 de Leopold (impacto global)</li>
+        <li><em>PG 19</em>Matriz de Conesa</li>
+        <li><em>PG 20</em>Área de influencia directa e indirecta</li>
+        <li><em>PG 21</em>Plan de monitoreo de calidad de agua</li>
+        <li><em>PG 22</em>Plan de monitoreo de calidad de suelo</li>
+      </ol></div>
+      <div class="col"><h3>Para cualquier área <span>Productividad</span></h3><ol>
+        <li><em>CV</em>Análisis y mejora de tu CV para pasar el filtro ATS</li>
+        <li><em>APP</em>Desarrollo de aplicaciones con IA, modo completo</li>
+        <li><em>APP</em>Desarrollo de aplicaciones, modo rápido</li>
+        <li><em>APP</em>Prototipo de aplicación, modo ultra rápido</li>
+        <li><em>PPT</em>Diseño y guion de presentaciones</li>
+        <li><em>TESIS</em>Idea de investigación con problema, hipótesis y variables</li>
+        <li><em>REV</em>Revisor de informes técnicos de ingeniería</li>
+      </ol></div>
+    </div>
+    <div class="libcta rv">
+      <a class="btn xl" href="/prompts-y-skills/gracias" data-cta="biblioteca">Quiero los prompts galácticos<span class="ic"><svg><use href="#wa"/></svg></span></a>
+      <p>Entra al grupo y te compartimos cómo acceder.</p>
+    </div>
+  </div>
+</section>
+
+<section id="herramientas">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">Tus propias herramientas</span>
+      <h2>Crea un GPT y una skill que escriben prompts perfectos por ti.</h2>
+      <div class="rule"></div>
+      <p>El siguiente nivel: en lugar de escribir cada prompt, construyes herramientas que aplican el método PACMAN automáticamente.</p>
+    </div>
+    <div class="tools">
+      <div class="tool rv">
+        <span class="k"><img src="../assets/ico-chatgpt.webp" alt="" width="96" height="96">ChatGPT</span>
+        <h3>Tu GPT «Creador de prompts PACMAN»</h3>
+        <p>Un asistente personalizado que te hace las preguntas correctas sobre tu necesidad y te devuelve un prompt galáctico listo para pegar.</p>
+        <div class="chat"><span class="u">Necesito revisar un informe de monitoreo de agua.</span><span class="a"><b>P</b> Especialista en calidad de agua · <b>A</b> revisar el informe contra los ECA · <b>C</b> estos resultados y puntos · <b>M</b> compara parámetro por parámetro… </span></div>
+      </div>
+      <div class="tool rv d1">
+        <span class="k"><img src="../assets/ico-claude.webp" alt="" width="96" height="96">Claude</span>
+        <h3>Tu skill «Prompts galácticos»</h3>
+        <p>Una skill que le enseñas una vez a Claude para que redacte prompts de alto nivel de tu profesión, siempre con la misma estructura y calidad.</p>
+        <div class="chat"><span class="u">/prompts-galacticos plan de clase de matemática para 3.º de secundaria</span><span class="a">Listo: prompt galáctico con rol, actividad, contexto, razonamiento, formato y condiciones. ¿Lo ajusto a tu colegio?</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programa" style="background:#fff">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">El programa</span>
+      <h2>2 semanas, 4 sesiones en vivo y 10 horas de IA aplicada.</h2>
+      <div class="rule"></div>
+      <p>Teórico-práctico, con casos reales de los participantes. Primero dominas el prompt perfecto, luego creas tus propias herramientas y al final aplicas la IA en todo tu trabajo.</p>
+    </div>
+    <div class="prog">
+      <div class="ses  rv ">
+        <div class="top"><div><small>Sesión 1 · Módulo 3</small><h3>Prompt engineering profesional y método PACMAN</h3><span class="mod">M03 · parte 1</span></div><div class="when">Vie 13 nov<span>7:00 – 9:00 pm</span></div></div>
+        <ol>
+          <li><em>3.1</em>Qué es prompt engineering</li>
+          <li><em>3.2</em>Por qué un buen prompt cambia la calidad del resultado</li>
+          <li><em>3.3</em>Anatomía de un prompt efectivo</li>
+          <li><em>3.4</em>Estructura profesional: rol, tarea, contexto, formato y restricciones</li>
+          <li><em>3.5</em>Cómo redactar prompts claros y específicos</li>
+          <li><em>3.6</em>Errores comunes en prompting</li>
+          <li><em>3.7</em>Diferencia entre prompts básicos y profesionales</li>
+          <li class="hl"><em>3.16</em>Método P-A-C-M-A-N (creación propia) para lograr el prompt perfecto</li>
+        </ol>
+      </div>
+      <div class="ses  rv d1">
+        <div class="top"><div><small>Sesión 2 · Módulo 3</small><h3>Prompts para el trabajo real</h3><span class="mod">M03 · parte 2</span></div><div class="when">Sáb 14 nov<span>7:00 – 10:00 pm</span></div></div>
+        <ol>
+          <li><em>3.8</em>Prompts para resumir información</li>
+          <li><em>3.9</em>Prompts para analizar normas y documentos</li>
+          <li><em>3.10</em>Prompts para clasificar información</li>
+          <li><em>3.11</em>Prompts para redactar informes técnicos</li>
+          <li><em>3.12</em>Prompts para generar matrices y tablas</li>
+          <li><em>3.13</em>Prompts iterativos y mejora progresiva</li>
+          <li><em>3.14</em>Ajuste fino del resultado esperado</li>
+          <li class="hl"><em>3.15</em>Prompts galácticos para el sector ambiental</li>
+        </ol>
+      </div>
+      <div class="ses s3 rv ">
+        <div class="top"><div><small>Sesión 3 · Módulo Skills</small><h3>Skills con Claude y ChatGPT</h3><span class="mod">Tu GPT y tu skill</span></div><div class="when">Vie 20 nov<span>7:00 – 9:00 pm</span></div></div>
+        <ol>
+          <li><em>S.1</em>Qué es una skill, un GPT y un proyecto, y cuándo usar cada uno</li>
+          <li><em>S.2</em>Anatomía de una skill: instrucciones, ejemplos, archivos y criterios de calidad</li>
+          <li><em>S.3</em>De prompt PACMAN a skill reutilizable</li>
+          <li><em>S.4</em>Crea tu skill en Claude, paso a paso</li>
+          <li><em>S.5</em>Crea tu GPT personalizado en ChatGPT</li>
+          <li class="hl"><em>S.6</em>Tu GPT «Creador de prompts PACMAN»</li>
+          <li class="hl"><em>S.7</em>Tu skill «Prompts galácticos»</li>
+          <li><em>S.8</em>Prueba, mide y mejora con casos reales</li>
+        </ol>
+      </div>
+      <div class="ses s4 rv d1">
+        <div class="top"><div><small>Sesión 4 · Módulo 4</small><h3>Uso práctico de la IA en el trabajo profesional</h3><span class="mod">M04</span></div><div class="when">Sáb 21 nov<span>7:00 – 10:00 pm</span></div></div>
+        <ol>
+          <li><em>4.1</em>IA para redacción profesional</li>
+          <li><em>4.2</em>IA para correos, oficios, memorandos y comunicaciones</li>
+          <li><em>4.3</em>IA para resúmenes ejecutivos y técnicos</li>
+          <li><em>4.4</em>IA para análisis de documentos largos</li>
+          <li><em>4.5</em>IA para organización del trabajo</li>
+          <li><em>4.6</em>IA para agendas, cronogramas y planificación</li>
+          <li><em>4.7</em>IA para presentaciones y material expositivo</li>
+          <li><em>4.8</em>IA para investigación y recopilación de información</li>
+          <li><em>4.9</em>IA para análisis preliminar de tablas y datos</li>
+          <li><em>4.10</em>IA para estandarización de formatos</li>
+          <li><em>4.11</em>IA para gestión del conocimiento</li>
+          <li class="hl"><em>4.12</em>Buenas prácticas de revisión humana antes del uso final</li>
+        </ol>
+      </div>
+    </div>
+    <div class="totals rv">
+      <div><b>10 h</b><span>En vivo</span></div><div><b>4</b><span>Sesiones</span></div><div><b>36</b><span>Temas</span></div><div><b>3</b><span>Módulos</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="acceso">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">Lo que obtienes</span>
+      <h2>Accede a la plataforma las 24 horas y a todos los recursos.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="perks rv d1">
+      <div class="big"><span class="e">🌐</span><b>Plataforma las 24 horas</b><p>Entra cuando quieras, desde cualquier dispositivo, y repasa a tu ritmo.</p></div>
+      <div class="big"><span class="e">📚</span><b>Materiales y recursos</b><p>Presentaciones, plantillas y recursos de cada sesión.</p></div>
+      <div class="big"><span class="e">🪐</span><b>Pack de prompts galácticos</b><p>+20 prompts hechos con PACMAN, listos para usar y adaptar.</p></div>
+      <div><span class="e">🤖</span><b>Tu GPT creador de prompts</b><p>En ChatGPT: le cuentas tu necesidad y te entrega el prompt perfecto.</p></div>
+      <div><span class="e">⚡</span><b>Tu skill de prompts galácticos</b><p>En Claude: redacta prompts de alto nivel para tu profesión.</p></div>
+      <div><span class="e">🧩</span><b>Plantilla PACMAN y checklist</b><p>Para construir prompts y revisar cada respuesta antes de entregarla.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">Para cualquier área</span>
+      <h2>Si usas la IA en tu trabajo, el método aplica a tu profesión.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="chips rv d1">
+      <span>Ingeniería</span><span>Medio ambiente</span><span>Salud</span><span>Derecho</span><span>Educación</span><span>Administración</span>
+      <span>Contabilidad y finanzas</span><span>Arquitectura</span><span>Ventas y marketing</span><span>Recursos humanos</span><span>Investigación y tesis</span><span>Consultoría</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div class="quote rv">
+    <p>La calidad de la respuesta depende de la calidad de la instrucción. Eso se aprende.</p>
+    <span>Equilibria · Comunidad de IA</span>
+  </div></div>
+</section>
+
+<section id="quien" style="background:#fff">
+  <div class="wrap mentor">
+    <div class="photo rv">
+      <img src="../assets/perfil.webp" alt="Jilder Michael Castillo Cabrera" width="568" height="900">
+      <div class="tag"><img src="../assets/logo-equilibria.webp" alt="" width="640" height="230">Fundador de la Comunidad de IA</div>
+    </div>
+    <div class="rv d1">
+      <span class="eyebrow">Quién dicta el curso</span>
+      <h2>Jilder Michael Castillo Cabrera</h2>
+      <div class="role">Fundador de la Comunidad de IA · Creador del método PACMAN</div>
+      <p>Aplica la inteligencia artificial al trabajo técnico real: documentos, normas, datos, informes y proyectos propios. Creó el método PACMAN para que cualquier profesional obtenga de la IA respuestas precisas, útiles y aplicables.</p>
+      <ul>
+        <li>Creó la biblioteca de prompts galácticos que hoy usa la comunidad.</li>
+        <li>Diseña prompts, GPTs y skills para trabajo técnico, normativo, académico y operativo.</li>
+        <li>Enseña con casos reales, en lenguaje claro y aplicable desde el primer día.</li>
+        <li>Más de 900 profesionales forman parte de la comunidad.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head mid rv">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que necesitas saber antes de entrar</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq rv d1">
+      <details open><summary>¿Necesito saber programar?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">No. Los prompts y las skills se escriben en español. Si ya usas ChatGPT o Claude para algo, tienes todo lo que necesitas.</div></details>
+      <details><summary>¿Qué es una skill?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">Un paquete de instrucciones, ejemplos y archivos que le enseñas una vez a la IA para que haga una tarea de tu trabajo siempre de la misma forma y con la misma calidad, sin volver a explicarle todo.</div></details>
+      <details><summary>¿Sirve si no soy del área ambiental?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">Sí. El método PACMAN funciona en cualquier profesión. En el curso usamos ejemplos de distintas áreas y casos que traen los asistentes.</div></details>
+      <details><summary>¿Necesito una cuenta de pago de ChatGPT o Claude?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">No para empezar. Te mostramos lo que puedes hacer con los planes gratuitos y en qué casos conviene un plan de pago.</div></details>
+      <details><summary>¿Cuándo son las sesiones?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">Son 4 sesiones en vivo por videollamada: viernes 13 y sábado 14, viernes 20 y sábado 21 de noviembre. Los viernes de 7:00 a 9:00 pm y los sábados de 7:00 a 10:00 pm (hora Perú). Los enlaces se comparten en el grupo de WhatsApp.</div></details>
+      <details><summary>¿Cómo accedo a los +20 prompts galácticos?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">Entra al grupo de WhatsApp. Ahí compartimos cómo acceder a la biblioteca y en el curso te enseñamos a usarlos y a crear los tuyos.</div></details>
+      <details><summary>¿Qué es un GPT personalizado?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">Una versión de ChatGPT con instrucciones y conocimientos propios. En el curso verás cómo crear uno que aplica el método PACMAN y escribe prompts por ti.</div></details>
+      <details><summary>¿Cómo accedo a la plataforma y a los materiales?<i><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="a">Entra al grupo de WhatsApp: ahí te damos toda la información del curso, el acceso a la plataforma y los enlaces de cada sesión.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="box rv">
+    <span class="pill"><span class="dot"></span>Inicia viernes 13 de noviembre · 7:00 pm</span>
+    <h2>Deja que la IA trabaje bien para ti.</h2>
+    <p>Entra al grupo hoy. Ahí recibes toda la información del curso: <b>10 horas de IA aplicada</b>, el <b>método PACMAN</b>, el <b>pack de prompts galácticos</b> y cómo crear <b>tu GPT y tu skill</b>.</p>
+    <div class="cta-wrap">
+      <a class="btn xl" href="/prompts-y-skills/gracias" data-cta="final">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a>
+      <p class="micro"><span>4 sesiones en vivo</span><span>·</span><span>Sin spam</span><span>·</span><span>Sales cuando quieras</span></p>
+    </div>
+  </div></div>
+</section>
+</main>
+
+<footer><div class="wrap r">
+  <img src="../assets/logo-equilibria.webp" alt="Equilibria Consulting" width="640" height="230">
+  <p>Equilibria Consulting · Comunidad de IA · <span id="year"></span></p>
+</div></footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="/prompts-y-skills/gracias" data-cta="sticky">Unirme al grupo de WhatsApp<span class="ic"><svg><use href="#wa"/></svg></span></a></div>
+<script src="../assets/eq.js"></script>
+<script>(function(){try{if(Date.now()<Date.parse("2026-11-21T22:00:00-05:00")){document.querySelectorAll(".clase-fecha").forEach(function(e){e.hidden=false})}}catch(e){}})();</script>
+</body>
+</html>
